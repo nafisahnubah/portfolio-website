@@ -10,9 +10,38 @@ import { useState, useEffect } from "react"
 const certifications = [
   {
     id: 1,
+    title: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services (AWS)",
+    issueDate: "2025",
+    expiryDate: "2028",
+    credentialId: "3ba7fdd31b034ac2b70922ff291b237a",
+    verificationUrl: "https://www.credly.com/badges/8779fae8-0b78-4810-b918-e031c5a814af/public_url",
+    description:
+      "Foundational AWS certification validating knowledge of cloud concepts, AWS services, security, pricing, and support models.",
+    skills: ["Cloud Computing", "Amazon Web Services (AWS)", "Cloud Services"],
+    icon: Cloud,
+    gradient: "from-yellow-500 to-orange-500",
+    category: "Cloud Computing",
+  },
+  {
+    id: 2,
+    title: "Practical Cybersecurity",
+    issuer: "ShiftKey Labs",
+    issueDate: "2025",
+    credentialId: "a0a8fced-94bb-46cb-a892-54054cf7c7e1",
+    verificationUrl: "https://credsverse.com/credentials/a0a8fced-94bb-46cb-a892-54054cf7c7e1",
+    description:
+      "Hands-on certification covering core cybersecurity principles, threat detection, mitigation strategies, and security best practices in real-world applications.",
+    skills: ["Cybersecurity"],
+    icon: Shield,
+    gradient: "from-red-500 to-orange-500",
+    category: "Cybersecurity",
+  },
+  {
+    id: 3,
     title: "Cloud Foundations",
     issuer: "ShiftKey Labs",
-    issueDate: "2024",
+    issueDate: "2025",
     credentialId: "09308d08-9796-4db0-8b18-3f8d3e5e891c",
     verificationUrl: "https://credsverse.com/credentials/09308d08-9796-4db0-8b18-3f8d3e5e891c",
     description:
@@ -23,10 +52,10 @@ const certifications = [
     category: "Cloud Computing",
   },
   {
-    id: 2,
+    id: 4,
     title: "Fundamentals of Cloud Administration with Azure",
     issuer: "ShiftKey Labs",
-    issueDate: "2024",
+    issueDate: "2025",
     credentialId: "09308d08-9796-4db0-8b18-3f8d3e5e891c",
     verificationUrl: "https://credsverse.com/credentials/09308d08-9796-4db0-8b18-3f8d3e5e891c",
     description:
@@ -36,7 +65,8 @@ const certifications = [
     gradient: "from-purple-500 to-pink-500",
     category: "Cloud Administration",
   },
-]
+];
+
 
 // const upcomingCertifications = [
 //   {
@@ -82,8 +112,7 @@ export default function CertificationsPage() {
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Continuous learning and professional development through industry-recognized certifications in cloud
-              computing and technology.
+              Continuous learning and professional development through industry-recognized certifications across tech and related fields.
             </p>
           </div>
         </div>
@@ -269,21 +298,20 @@ export default function CertificationsPage() {
           <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-12 backdrop-blur-sm border border-primary/20">
             <h2 className="text-3xl font-bold text-foreground mb-4">Committed to Growth</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              I believe in continuous learning and staying current with industry trends. These certifications represent
-              my commitment to professional excellence.
+              These certifications highlight the steps I’ve taken to expand my knowledge and stay current in an ever-changing industry.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="hover:scale-105 transition-all duration-300">
                 <Link href="/experience">View Experience</Link>
               </Button>
-              <Button
+              {/* <Button
                 asChild
                 variant="outline"
                 size="lg"
                 className="hover:scale-105 transition-all duration-300 bg-transparent"
               >
                 <Link href="/contact">Let's Connect</Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

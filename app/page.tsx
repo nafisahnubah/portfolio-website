@@ -202,7 +202,7 @@ export default function HomePage() {
               { number: "4+", label: "Projects Built", color: "text-primary", icon: "🚀" },
               { number: "2+", label: "Years Learning", color: "text-secondary", icon: "📚" },
               { number: "5+", label: "Technologies", color: "text-accent", icon: "⚡" },
-              { number: "2", label: "Certifications", color: "text-primary", icon: "🏆" },
+              { number: "4", label: "Certifications", color: "text-primary", icon: "🏆" },
             ].map((stat, index) => (
               <div
                 key={index}

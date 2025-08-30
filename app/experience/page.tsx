@@ -13,8 +13,8 @@ const experiences = [
     title: "Student Researcher",
     company: "Dalhousie Machine Learning Society",
     location: "Halifax, NS",
-    period: "Present",
-    status: "Current",
+    period: "2025",
+    status: "Completed",
     type: "Research",
     description:
       "Contributing to an ongoing research project under Dr. Carlos R. Hernandez Castillo involving fMRI data analysis using machine learning to uncover biomarkers for diseases.",
@@ -32,8 +32,8 @@ const experiences = [
     title: "Instructor",
     company: "SuperNOVA at Dalhousie University",
     location: "Halifax, NS",
-    period: "Present",
-    status: "Current",
+    period: "2025",
+    status: "Completed",
     type: "Education",
     description:
       "Delivering Computer Science camps to youth, simplifying complex coding concepts through hands-on activities.",
@@ -48,25 +48,6 @@ const experiences = [
   },
   {
     id: 3,
-    title: "Teaching Assistant and Marker",
-    company: "Dalhousie University (CSCI 1170)",
-    location: "Halifax, NS",
-    period: "2025",
-    status: "Completed",
-    type: "Education",
-    description:
-      "Conducted lab classes and provided technical support for web development courses, helping students master HTML, CSS, and JavaScript.",
-    responsibilities: [
-      "Conducted lab classes providing clear instructions for web development concepts",
-      "Assisted students with technical questions related to HTML, CSS, JS, and web concepts",
-      "Graded assignments and provided constructive feedback to improve student learning",
-    ],
-    skills: ["Web Development", "HTML", "CSS", "JavaScript", "Teaching", "Assessment"],
-    icon: Code,
-    gradient: "from-green-500 to-emerald-500",
-  },
-  {
-    id: 4,
     title: "Software Developer (Internal)",
     company: "Student Accessibility Centre, Dalhousie University",
     location: "Halifax, NS",
@@ -83,6 +64,25 @@ const experiences = [
     skills: ["Java", "Software Development", "Automation", "Team Collaboration", "Problem Solving"],
     icon: Briefcase,
     gradient: "from-orange-500 to-red-500",
+  },
+  {
+    id: 4,
+    title: "Teaching Assistant and Marker",
+    company: "Dalhousie University",
+    location: "Halifax, NS",
+    period: "2025",
+    status: "Completed",
+    type: "Education",
+    description:
+      "Conducted lab classes and provided technical support for web development courses, helping students master HTML, CSS, and JavaScript.",
+    responsibilities: [
+      "Conducted lab classes providing clear instructions for web development concepts",
+      "Assisted students with technical questions related to HTML, CSS, JS, and web concepts",
+      "Graded assignments and provided constructive feedback to improve student learning",
+    ],
+    skills: ["Web Development", "HTML", "CSS", "JavaScript", "Teaching", "Assessment"],
+    icon: Code,
+    gradient: "from-green-500 to-emerald-500",
   },
   {
     id: 5,
@@ -103,6 +103,26 @@ const experiences = [
     skills: ["Time Management", "Attention to Detail", "Communication", "Multitasking", "Student Support"],
     icon: GraduationCap,
     gradient: "from-indigo-500 to-purple-500",
+  },
+  {
+    id: 6,
+    title: "Lunch Monitor",
+    company: "Halifax Regional Centre for Education (HRCE)",
+    location: "Halifax, NS",
+    period: "Present",
+    status: "Current",
+    type: "Support",
+    description:
+      "Supervised students at LeMarchant-St. Thomas Elementary during lunch periods, ensuring a safe and positive environment while supporting school routines.",
+    responsibilities: [
+      "Supervised students during lunch periods to maintain safety and adherence to school code of conduct",
+      "Assisted with lunchtime activities, outdoor play preparation, and cleanup tasks",
+      "Promoted positive behavior and student engagement through active supervision",
+      "Collaborated with school staff to provide feedback on student behavior and well-being",
+    ],
+    skills: ["Supervision", "Student Support", "Collaboration", "Communication", "Conflict Resolution"],
+    icon: Users,
+    gradient: "from-yellow-500 to-orange-500",
   },
 ]
 
@@ -131,19 +151,18 @@ export default function ExperiencePage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium">
               <Briefcase className="w-4 h-4" />
-              Professional Journey
+              Experiences
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground">
-              Work{" "}
+              My{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Experience
+                Journey
               </span>
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              My professional journey through research, education, and software development at Dalhousie University and
-              beyond.
+              From research and teaching to software development and volunteer roles, these experiences reflect the different ways I’ve grown and contributed.
             </p>
           </div>
         </div>
@@ -329,15 +348,14 @@ export default function ExperiencePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-foreground">Want to work together?</h2>
+            <h2 className="text-3xl font-bold text-foreground">Looking Ahead</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I'm always interested in new opportunities to apply my skills in research, education, or software
-              development.
+              Through research, education, development, and support roles, I’ve built a foundation of skills and perspectives that I continue to grow with every opportunity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="hover:scale-105 transition-all duration-300">
+              {/* <Button asChild size="lg" className="hover:scale-105 transition-all duration-300">
                 <Link href="/contact">Get In Touch</Link>
-              </Button>
+              </Button> */}
               <Button
                 asChild
                 variant="outline"

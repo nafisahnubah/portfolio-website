@@ -3,7 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Briefcase, GraduationCap, Code, Users, Brain, Calendar, MapPin, ChevronRight, Award } from "lucide-react"
+import { Briefcase, GraduationCap, Code, Users, Brain, Calendar, MapPin, ChevronRight, Award, MessageSquare } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 
@@ -17,11 +17,11 @@ const experiences = [
     status: "Completed",
     type: "Research",
     description:
-      "Contributing to an ongoing research project under Dr. Carlos R. Hernandez Castillo involving fMRI data analysis using machine learning to uncover biomarkers for diseases.",
+      "Contributed to a research project under Dr. Carlos R. Hernandez Castillo involving fMRI data analysis using machine learning to uncover biomarkers for diseases.",
     responsibilities: [
       "Collaborating with fellow researchers to explore advanced machine learning techniques for neuroscience data",
       "Analyzing fMRI data to identify potential disease biomarkers",
-      "Contributing to research publications and presentations",
+      "Contributing novel insights to research publications and presentations",
     ],
     skills: ["Machine Learning", "fMRI Data Analysis", "Research", "Neuroscience", "Python"],
     icon: Brain,
@@ -29,16 +29,16 @@ const experiences = [
   },
   {
     id: 2,
-    title: "Instructor",
+    title: "Computer Science Instructor",
     company: "SuperNOVA at Dalhousie University",
     location: "Halifax, NS",
     period: "2025",
     status: "Completed",
     type: "Education",
     description:
-      "Delivering Computer Science camps to youth, simplifying complex coding concepts through hands-on activities.",
+      "Delivered Computer Science camps to youth, simplifying complex coding concepts through hands-on activities.",
     responsibilities: [
-      "Teaching programming concepts to young students through engaging activities",
+      "Teaching programming and Computer Science concepts to young students through engaging activities",
       "Providing mentorship and guidance to students with varying skill levels",
       "Adapting instruction methods to suit different learning styles",
     ],
@@ -55,10 +55,10 @@ const experiences = [
     status: "Completed",
     type: "Development",
     description:
-      "Developed a Java application to automate the sorting of scheduled exams, enhancing operational efficiency.",
+      "Developed a Java application to automate the scheduling and sorting of exams, enhancing operational efficiency.",
     responsibilities: [
       "Designed and implemented Java application for exam scheduling automation",
-      "Collaborated with team members to design and implement new features",
+      "Collaborated with a team member to design and implement new features",
       "Improved operational efficiency through automated processes",
     ],
     skills: ["Java", "Software Development", "Automation", "Team Collaboration", "Problem Solving"],
@@ -74,7 +74,7 @@ const experiences = [
     status: "Completed",
     type: "Education",
     description:
-      "Conducted lab classes and provided technical support for web development courses, helping students master HTML, CSS, and JavaScript.",
+      "Conducted lab classes and provided technical support for a Web Development course, helping students master HTML, CSS, and JavaScript.",
     responsibilities: [
       "Conducted lab classes providing clear instructions for web development concepts",
       "Assisted students with technical questions related to HTML, CSS, JS, and web concepts",
@@ -86,6 +86,27 @@ const experiences = [
   },
   {
     id: 5,
+    title: "Social Media Coordinator",
+    company: "Dalhousie Machine Learning Society",
+    location: "Halifax, NS",
+    period: "Present",
+    status: "Current",
+    type: "Communications",
+    description:
+      "Managing the society’s digital presence by creating, scheduling, and monitoring content to highlight events, projects, and members while fostering community engagement.",
+    responsibilities: [
+      "Planning and posting content to showcase events, projects, and members of the society",
+      "Collaborating with Events and Marketing teams to align and schedule posts effectively",
+      "Monitoring engagement metrics and refining content strategy for better reach and impact",
+      "Replying to DMs and comments to keep the online community engaged and active",
+    ],
+    skills: ["Social Media Management", "Content Creation", "Digital Marketing", "Community Engagement", "Communication"],
+    icon: MessageSquare,
+    gradient: "from-pink-500 to-red-500",
+  },
+
+  {
+    id: 6,
     title: "Invigilator",
     company: "Student Accessibility Centre, Dalhousie University",
     location: "Halifax, NS",
@@ -93,7 +114,7 @@ const experiences = [
     status: "Current",
     type: "Support",
     description:
-      "Proctored up to 15 exams in a fast-paced environment for students with accommodations, ensuring adherence to approved needs.",
+      "Proctored up to 20 exams in a fast-paced environment for students with accommodations, ensuring adherence to approved needs.",
     responsibilities: [
       "Proctored multiple exams simultaneously in fast-paced environment",
       "Ensured adherence to accommodation requirements for students with special needs",
@@ -105,7 +126,7 @@ const experiences = [
     gradient: "from-indigo-500 to-purple-500",
   },
   {
-    id: 6,
+    id: 7,
     title: "Lunch Monitor",
     company: "Halifax Regional Centre for Education (HRCE)",
     location: "Halifax, NS",
@@ -118,7 +139,6 @@ const experiences = [
       "Supervised students during lunch periods to maintain safety and adherence to school code of conduct",
       "Assisted with lunchtime activities, outdoor play preparation, and cleanup tasks",
       "Promoted positive behavior and student engagement through active supervision",
-      "Collaborated with school staff to provide feedback on student behavior and well-being",
     ],
     skills: ["Supervision", "Student Support", "Collaboration", "Communication", "Conflict Resolution"],
     icon: Users,
@@ -131,6 +151,7 @@ const typeColors = {
   Education: "bg-blue-100 text-blue-800 border-blue-200",
   Development: "bg-green-100 text-green-800 border-green-200",
   Support: "bg-orange-100 text-orange-800 border-orange-200",
+  Communications: "bg-pink-100 text-pink-800 border-pink-200",
 }
 
 export default function ExperiencePage() {

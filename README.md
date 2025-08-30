@@ -3,10 +3,10 @@
 This is my personal portfolio website built with [Next.js](https://nextjs.org/).  
 It highlights my work, skills, and background in a modern and responsive design.
 
-## 🚀 Live Demo
+## Live Demo
 [View Portfolio](https://your-live-link.com)
 
-## 🛠 Tech Stack
+## Tech Stack
 - Next.js
 - React
 - Tailwind

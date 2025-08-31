@@ -15,6 +15,7 @@ const experiences = [
     location: "Halifax, NS",
     period: "2025",
     status: "Completed",
+    certificate: "/DMLS_Certificate.pdf",
     type: "Research",
     description:
       "Contributed to a research project under Dr. Carlos R. Hernandez Castillo involving fMRI data analysis using machine learning to uncover biomarkers for diseases.",
@@ -292,6 +293,23 @@ export default function ExperiencePage() {
                                 ))}
                               </div>
                             </div>
+
+                            {experience.certificate && (
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-2">Certificate:</h4>
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  className="hover:scale-105 transition-all"
+                                  asChild
+                                >
+                                  <Link href={experience.certificate} target="_blank">
+                                    View Certificate
+                                  </Link>
+                                </Button>
+                              </div>
+                            )}
+
                           </div>
                         )}
 

@@ -38,7 +38,7 @@ const projects = [
     category: "Tooling",
     year: "2025",
     status: "Completed",
-    image: "/normalized-entity-parser-ui.png",
+    image: "/nep.png",
     github: "https://github.com/NepSauce/Normalized-Entity-Parser",
     demo: "#",
     icon: Database,

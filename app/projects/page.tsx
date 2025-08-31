@@ -112,7 +112,7 @@ const projects = [
     status: "Current",
     image: "/portfolio.png",
     github: "https://github.com/nafisahnubah/portfolio-website",
-    demo: "#",
+    demo: "https://nafisah-nubah-portfolio.vercel.app/",
     icon: Globe,
     gradient: "from-blue-500 to-blue-700",
   },

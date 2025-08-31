@@ -16,7 +16,7 @@ const projects = [
       "Collaborated with a cross-functional team to develop a web-based tool for detecting and fixing performance bugs in deep learning models. Used Agile methodologies and Jira for project management.",
     longDescription:
       "A comprehensive tool that helps developers identify and resolve performance bottlenecks in deep learning models. Features real-time analysis, automated suggestions, and integration with popular ML frameworks.",
-    technologies: ["React.js", "Tailwind CSS", "Python Flask", "Gemini API", "Google Cloud", "Jira"],
+    technologies: ["Python Flask", "Gemini API", "Google Cloud", "Jira", "React.js", "Tailwind CSS"],
     category: "Full-Stack",
     year: "2025",
     status: "Completed",

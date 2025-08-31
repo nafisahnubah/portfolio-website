@@ -53,7 +53,7 @@ const projects = [
     longDescription:
       "A complete library management solution with book cataloging, user management, and inventory tracking. Features CRUD operations and responsive design.",
     technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Git"],
-    category: "Web Development",
+    category: "Full-Stack",
     year: "2024",
     status: "Completed",
     image: "/library-management-system-interface.png",
@@ -80,9 +80,124 @@ const projects = [
     icon: Code,
     gradient: "from-orange-500 to-red-500",
   },
+  {
+    id: 5,
+    title: "Normalized Entity Parser (NEP)",
+    subtitle: "Java Tool for Processing SARS Exam Rosters",
+    description:
+      "Built a Java-based application that converts university exam roster PDFs into structured, easy-to-use summaries.",
+    longDescription:
+      "NEP (Normalized Entity Parser) automates the extraction and grouping of exam data—course codes, times, locations, and student counts—from SARS-generated rosters. It outputs clean text summaries to reduce manual workload and improve exam scheduling efficiency at the Accessibility Center.",
+    technologies: ["Java", "Swing GUI", "Apache PDFBox", "Launch4j", "Git"],
+    category: "Tooling",
+    year: "2025",
+    status: "Completed",
+    image: "/normalized-entity-parser-ui.png",
+    github: "https://github.com/NepSauce/Normalized-Entity-Parser",
+    demo: "#",
+    icon: Database,
+    gradient: "from-purple-500 to-indigo-500",
+  },
+  {
+    id: 6,
+    title: "PrediHome",
+    subtitle: "Interactive Housing & Employment Analytics Across Canada",
+    description:
+      "Built an R/Shiny web app that helps users evaluate the most affordable and promising provinces to live in based on housing prices and employment indicators.",
+    longDescription:
+      "PrediHome is a data-driven web application leveraging housing price index (HPI), unemployment, and employment rate data to guide users toward the best provinces to live in. Users can select a year (1986–2035) to explore historical and predictive analytics. The app highlights the province with the lowest HPI and unemployment rate, displays interactive bar charts, and calculates a composite score combining key metrics to recommend the top province overall.",
+    technologies: ["R", "Shiny", "ggplot2", "dplyr", "tidyr", "Linear Regression (lm)"],
+    category: "Data Analysis",
+    year: "2025",
+    status: "Completed",
+    image: "/predihome-dashboard.png", // placeholder; use a screenshot of the app UI
+    github: "https://github.com/RafatH0ssain/PrediHome",
+    demo: "#",
+    icon: Globe,
+    gradient: "from-teal-500 to-green-500",
+  },
+  {
+    id: 7,
+    title: "JSON Compiler (Frontend)",
+    subtitle: "Recursive-Descent Parser & Scanner for JSON",
+    description:
+      "Developed a Python-based recursive-descent parser that processes JSON token streams to generate syntax trees (ASTs), implementing both lexical scanning and syntactic/semantic analysis.",
+    longDescription:
+      "This project implements a recursive-descent parser using Python to process JSON token streams from text files. It includes both a scanner and parser to perform syntactic and semantic analysis, constructing Abstract Syntax Trees that reflect the JSON grammar. The tool can process valid JSON inputs and output structured AST representations, demonstrating fundamentals of compiler design.",
+    technologies: ["Python", "Recursive-Descent Parser", "Lexer/Scanner", "AST Generation", "File I/O"],
+    category: "Tooling",
+    year: "2025",
+    status: "Completed",
+    image: "/json-parser-demo.png", // you can replace this with a screenshot showing the AST or sample input/output
+    github: "https://github.com/nafisahnubah/json-compiler-frontend",
+    demo: "#",
+    icon: Code,
+    gradient: "from-gray-500 to-gray-700",
+  },
+  {
+    id: 8,
+    title: "Simple Board Game Simulation",
+    subtitle: "Java-Based 8×8 Grid Game Engine",
+    description:
+      "Implemented an interactive board game simulator in Java featuring diverse piece behaviors and user-driven commands.",
+    longDescription:
+      "This Java application simulates a board game on an 8×8 grid, allowing users to create and move different types of pieces—Slow, Fast, Flexible, and Fast Flexible—each with unique movement rules. It supports interactive command-based gameplay, dynamic board display, and validation logic to prevent invalid moves or actions. Built to demonstrate object-oriented design, command parsing, and real-time state updates.",
+    technologies: ["Java", "Object-Oriented Programming", "CLI", "Game Logic", "Command Parser"],
+    category: "Tooling",
+    year: "2025",
+    status: "Completed",
+    image: "/simple-board-game-ui.png", // Consider using a console screenshot or board layout visualization
+    github: "https://github.com/nafisahnubah/simple-board-game",
+    demo: "#",
+    icon: Code,
+    gradient: "from-yellow-500 to-yellow-700",
+  },
+  {
+    id: 9,
+    title: "Color Contrast Checker 2",
+    subtitle: "Lightweight WCAG Color Contrast NPM Tool",
+    description:
+      "Created a lightweight npm package to check if two colors meet WCAG contrast guidelines across different levels (AA, AAA, large-text variants).",
+    longDescription:
+      "Built a versatile JavaScript library that supports a wide variety of color formats—hex (3/6/8 digits), RGB(A), HSL(A), HSV(A), named CSS colors, and integer codecs. It calculates relative luminance, contrast ratios, and accessibility compliance (AA, AAA, AA_LARGE, AAA_LARGE) to help developers ensure visual accessibility.",
+    technologies: [
+      "JavaScript",
+      "WCAG",
+      "Accessibility",
+      "Color Parsing",
+      "npm"
+    ],
+    category: "Tooling",
+    year: "2025",
+    status: "Completed",
+    image: "/color-contrast-checker2-sample.png", // Consider using a code snippet or CLI output screenshot
+    github: "https://github.com/nafisahnubah/color-contrast-checker2",
+    demo: "#",
+    icon: Code,
+    gradient: "from-gray-400 to-gray-600",
+  },
+  {
+    id: 10,
+    title: "Portfolio Website",
+    subtitle: "Personal Portfolio to Showcase Projects, Skills & Experience",
+    description:
+      "Designed and implemented my personal portfolio website to highlight my work, credentials, and journey in one intuitive web experience.",
+    longDescription:
+      "Built a responsive portfolio site that organizes my certifications, work experiences, and projects into a clean, accessible layout. Developed with a focus on usability and design coherence, it serves as a central showcase of my skills and professional growth.",
+    technologies: ["React.js (or HTML/CSS/JS, depending on your stack)", "Tailwind CSS (or other styling tools)", "Responsive Design", "Accessibility"],
+    category: "Frontend",
+    year: "2025",
+    status: "Current",
+    image: "/portfolio-website-screenshot.png", // consider a screenshot of your homepage or project gallery
+    github: "https://github.com/nafisahnubah/portfolio-website",
+    demo: "#",
+    icon: Globe,
+    gradient: "from-blue-500 to-blue-700",
+  },
+
 ]
 
-const categories = ["All", "Full-Stack", "Web Development", "Data Analysis"]
+const categories = ["All", "Full-Stack", "Frontend", "Data Analysis", "Tooling"]
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
@@ -115,8 +230,7 @@ export default function ProjectsPage() {
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              A collection of projects showcasing my journey in full-stack development, from web applications to data
-              analysis tools.
+              A collection of projects showcasing my journey in software development, spanning web applications, data analysis, and interactive tools.
             </p>
           </div>
         </div>
@@ -251,15 +365,14 @@ export default function ProjectsPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-card/30 to-card/50 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-foreground">Interested in collaborating?</h2>
+            <h2 className="text-3xl font-bold text-foreground">Building Forward</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities, interesting projects, or just having a chat about
-              technology and development.
+              These projects represent my curiosity and drive to create, each one an opportunity to learn, experiment, and bring ideas to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="hover:scale-105 transition-all duration-300">
+              {/* <Button asChild size="lg" className="hover:scale-105 transition-all duration-300">
                 <Link href="/contact">Get In Touch</Link>
-              </Button>
+              </Button> */}
               <Button
                 asChild
                 variant="outline"

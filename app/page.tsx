@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowRight, Code, Database, Globe, Sparkles, Github, Linkedin, Mail, Heart, Smile } from "lucide-react"
+import { ArrowRight, Code, Database, Globe, Sparkles, Github, Linkedin, Mail, Heart, Smile, BarChart, Book, Zap, Award, Activity } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
@@ -10,7 +10,7 @@ export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false)
   const [typedText, setTypedText] = useState("")
   const [currentEmoji, setCurrentEmoji] = useState(0)
-  const fullText = "Building innovative web solutions"
+  const fullText = "Exploring technology, data, and meaningful projects"
   const emojis = ["🚀", "✨", "💻", "🎯", "🌟"]
 
   useEffect(() => {
@@ -80,7 +80,7 @@ export default function HomePage() {
                 <span className="animate-pulse">|</span>
               </p>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-in fade-in duration-1000 delay-700">
-                Currently studying at{" "}
+                Computer Science Student | {" "}
                 <span className="text-primary font-semibold hover:text-secondary transition-colors cursor-pointer hover:animate-pulse">
                   Dalhousie University
                 </span>
@@ -93,8 +93,8 @@ export default function HomePage() {
                 size="lg"
                 className="group hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:rotate-1"
               >
-                <Link href="/projects">
-                  View My Projects
+                <Link href="/experience">
+                  View My Work
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                 </Link>
               </Button>
@@ -136,32 +136,41 @@ export default function HomePage() {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-12 animate-in fade-in duration-1000 hover:animate-pulse cursor-default">
-            What I Do ✨
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12 animate-in fade-in duration-1000 hover:animate-pulse cursor-default flex justify-center items-center gap-2">
+            What I Do
+            <Sparkles className="w-6 h-6 font-extrabold text-yellow-700" />
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               {
                 icon: Code,
-                title: "Full-Stack Development",
-                description: "React.js, Node.js, Python, Java - Building end-to-end solutions",
+                title: "Full-Stack & Web Development",
+                description: "React.js, Node.js, Python, Java - Building responsive, accessible, and interactive web applications",
                 color: "from-primary to-secondary",
                 emoji: "💻",
               },
               {
                 icon: Database,
-                title: "Database & Cloud",
-                description: "MongoDB, MySQL, Google Cloud, Firebase - Scalable data solutions",
+                title: "Cloud & Data Solutions",
+                description: "AWS, Azure, Firebase, MongoDB, MySQL - Scalable cloud architectures and data management",
                 color: "from-secondary to-accent",
                 emoji: "☁️",
               },
               {
-                icon: Globe,
-                title: "Web Technologies",
-                description: "Modern web development with responsive design and great UX",
-                color: "from-accent to-primary",
-                emoji: "🌐",
+                icon: Sparkles,
+                title: "Teaching & Mentorship",
+                description: "Instructor, TA, and workshop experience simplifying complex CS concepts for students",
+                color: "from-yellow-400 to-yellow-600",
+                emoji: "🎓",
               },
+              {
+                icon: Activity,
+                title: "Machine Learning & Analytics",
+                description: "Machine learning and data analysis research and projects, including fMRI and performance analytics",
+                color: "from-green-400 to-green-600",
+                emoji: "🔬",
+              }
+
             ].map((item, index) => (
               <Card
                 key={index}
@@ -177,7 +186,7 @@ export default function HomePage() {
                     >
                       <item.icon className="w-6 h-6 text-white" />
                     </div>
-                    <span className="text-2xl group-hover:animate-bounce">{item.emoji}</span>
+                    {/* <span className="text-2xl group-hover:animate-bounce">{item.emoji}</span> */}
                   </div>
                   <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                     {item.title}
@@ -194,24 +203,25 @@ export default function HomePage() {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-card/30 to-card/50 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-12 animate-in fade-in duration-1000 hover:animate-pulse cursor-default">
-            Quick Stats 📊
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12 animate-in fade-in duration-1000 hover:animate-pulse cursor-default flex justify-center items-center gap-2">
+            Quick Stats
+            <BarChart className="w-8 h-8 font-extrabold text-teal-700" />
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: "4+", label: "Projects Built", color: "text-primary", icon: "🚀" },
-              { number: "2+", label: "Years Learning", color: "text-secondary", icon: "📚" },
-              { number: "5+", label: "Technologies", color: "text-accent", icon: "⚡" },
-              { number: "4", label: "Certifications", color: "text-primary", icon: "🏆" },
+              { number: "5+", label: "Projects Built", color: "text-primary", icon: <BarChart className="w-8 h-8" /> },
+              { number: "2+", label: "Years Learning", color: "text-secondary", icon: <Book className="w-8 h-8" /> },
+              { number: "5+", label: "Technologies", color: "text-accent", icon: <Zap className="w-8 h-8" /> },
+              { number: "4", label: "Certifications", color: "text-primary", icon: <Award className="w-8 h-8" /> },
             ].map((stat, index) => (
               <div
                 key={index}
                 className={`space-y-2 hover:scale-110 transition-transform duration-300 cursor-pointer animate-in zoom-in duration-700 hover:-rotate-3 group`}
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="text-3xl group-hover:animate-bounce">{stat.icon}</div>
+                {/* <div className="text-3xl group-hover:animate-bounce">{stat.icon}</div> */}
                 <div className={`text-4xl font-bold ${stat.color} hover:animate-pulse`}>{stat.number}</div>
-                <div className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <div className="text-lg text-muted-foreground hover:text-foreground transition-colors">
                   {stat.label}
                 </div>
               </div>
@@ -237,14 +247,14 @@ export default function HomePage() {
               </div> */}
             </div>
             <h2 className="text-3xl font-bold text-foreground mb-4 animate-in fade-in duration-1000 hover:animate-pulse cursor-default">
-              Ready to collaborate?
+              Get in Touch!
             </h2>
             <p className="text-lg text-muted-foreground mb-8 animate-in fade-in duration-1000 delay-200">
-              I'm always excited to work on new projects and learn from experienced developers.
+              I’m always excited to explore new ideas, share knowledge, and create meaningful experiences. Let’s connect, collaborate, or just exchange thoughts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in slide-in-from-bottom-5 duration-1000 delay-400">
               <Button asChild size="lg" className="hover:scale-105 transition-all duration-300 hover:rotate-1 group">
-                <Link href="/projects">
+                <Link href="/experience">
                   Explore My Work
                   <Sparkles className="ml-2 w-4 h-4 group-hover:animate-spin" />
                 </Link>

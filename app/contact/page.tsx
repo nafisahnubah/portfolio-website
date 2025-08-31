@@ -53,18 +53,18 @@ export default function ContactPage() {
 
   const contactInfo = [
     {
-      icon: Mail,
-      label: "Email",
-      value: "Nafisah.Nubah@dal.ca",
-      href: "mailto:Nafisah.Nubah@dal.ca",
-      gradient: "from-red-500 to-pink-500",
+      icon: Linkedin,
+      label: "LinkedIn",
+      value: "nafisah-nubah",
+      href: "http://www.linkedin.com/in/nafisah-nubah-3a355829b",
+      gradient: "from-blue-600 to-blue-800",
     },
     {
-      icon: MapPin,
-      label: "Location",
-      value: "Halifax, NS, Canada",
-      href: "#",
-      gradient: "from-green-500 to-emerald-500",
+      icon: Mail,
+      label: "Email",
+      value: ["Nafisah.Nubah@dal.ca", "nafisahnubah@gmail.com"],
+      href: "mailto:Nafisah.Nubah@dal.ca",
+      gradient: "from-red-500 to-pink-500",
     },
     {
       icon: Github,
@@ -74,11 +74,11 @@ export default function ContactPage() {
       gradient: "from-gray-700 to-gray-900",
     },
     {
-      icon: Linkedin,
-      label: "LinkedIn",
-      value: "nafisah-nubah",
-      href: "http://www.linkedin.com/in/nafisah-nubah-3a355829b",
-      gradient: "from-blue-600 to-blue-800",
+      icon: MapPin,
+      label: "Location",
+      value: "Halifax, NS, Canada",
+      href: "#",
+      gradient: "from-green-500 to-emerald-500",
     },
   ]
 
@@ -105,13 +105,12 @@ export default function ContactPage() {
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              I'd love to hear from you! Whether you have a project in mind, want
-              to collaborate, or just want to say hello, feel free to reach out.
+              I’m always excited to meet new people, swap ideas, or chat about cool projects. If something here caught your eye, or you just feel like saying hi, drop me a message.
             </p>
 
             <div className="flex items-center justify-center gap-2 text-muted-foreground animate-pulse">
               <Coffee className="w-5 h-5" />
-              <span>Always up for a good conversation over coffee!</span>
+              <span>Coffee chats are always welcome!</span>
               <Heart className="w-5 h-5 text-red-500" />
             </div>
           </div>
@@ -133,11 +132,10 @@ export default function ContactPage() {
                   <div className="space-y-2">
                     <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
                       <Sparkles className="w-6 h-6 text-primary" />
-                      Send me a message
+                      Say hi!
                     </h2>
                     <p className="text-muted-foreground">
-                      I'll get back to you as soon as possible. Looking forward
-                      to hearing from you!
+                      I’d love to hear what’s on your mind. I’ll get back to you as soon as I can.
                     </p>
                   </div>
 
@@ -225,7 +223,7 @@ export default function ContactPage() {
                               ? "ring-2 ring-primary/50 scale-105"
                               : ""
                           }`}
-                          placeholder="Tell me about your project, idea, or just say hello!"
+                          placeholder="Tell me your thoughts, question, or just say hello!"
                           required
                         />
                       </div>
@@ -255,9 +253,7 @@ export default function ContactPage() {
                   Contact Information
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Feel free to reach out through any of these channels. I'm
-                  always excited to connect with fellow developers, potential
-                  collaborators, or anyone interested in technology!
+                  Here are a few other ways to get in touch or follow my work:
                 </p>
               </div>
 
@@ -283,46 +279,16 @@ export default function ContactPage() {
                           {info.label}
                         </h3>
                         <p className="text-muted-foreground group-hover:text-foreground transition-colors">
-                          {info.value}
+                          {Array.isArray(info.value) 
+                            ? info.value.map((v, i) => <span key={i} className="block">{v}</span>) 
+                            : info.value
+                          }
                         </p>
                       </div>
                     </Link>
                   </Card>
                 ))}
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-card/30 to-card/50 backdrop-blur-sm">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-foreground">
-              Ready to start something amazing?
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Whether it's a new project, collaboration opportunity, or just a
-              friendly chat about technology, I'm always excited to connect with
-              like-minded people.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="hover:scale-105 transition-all duration-300"
-              >
-                <Link href="/projects">View My Work</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="hover:scale-105 transition-all duration-300 bg-transparent"
-              >
-                <Link href="/experience">My Experience</Link>
-              </Button>
             </div>
           </div>
         </div>

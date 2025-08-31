@@ -18,7 +18,7 @@ const experiences = [
     certificate: "/DMLS_Certificate.pdf",
     type: "Research",
     description:
-      "Contributed to a research project under Dr. Carlos R. Hernandez Castillo involving fMRI data analysis using machine learning to uncover biomarkers for diseases.",
+      "Contributed to Neuro Imaging Analysis and Research (NIAR), a research project under Dr. Carlos R. Hernandez Castillo involving fMRI data analysis using machine learning to uncover biomarkers for diseases.",
     responsibilities: [
       "Collaborating with fellow researchers to explore advanced machine learning techniques for neuroscience data",
       "Analyzing fMRI data to identify potential disease biomarkers",

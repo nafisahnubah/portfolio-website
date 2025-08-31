@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowRight, Code, Database, Globe, Sparkles, Github, Linkedin, Mail, Heart, Smile, BarChart, Book, Zap, Award, Activity } from "lucide-react"
+import { ArrowRight, Code, Database, Globe, Sparkles, Github, Linkedin, Mail, Heart, Smile, BarChart, Book, Zap, Award, Activity, Trophy, GraduationCap } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
@@ -197,6 +197,67 @@ export default function HomePage() {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Academic Excellence Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary/5 to-secondary/5 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12 animate-in fade-in duration-1000 hover:animate-pulse cursor-default">
+            Academic Excellence <GraduationCap className="inline w-10 h-10 ml-2 text-primary" />
+          </h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* CGPA Card */}
+            <Card className="p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1 cursor-pointer group border-0 bg-gradient-to-br from-card to-card/50 backdrop-blur-sm hover:scale-105">
+              <div className="text-center space-y-4">
+                <Trophy className="w-10 h-10 mx-auto text-primary group-hover:animate-bounce" />
+                <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  Academic Standing
+                </h3>
+                <div className="space-y-2">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    4.21/4.30
+                  </div>
+                  <p className="text-lg text-muted-foreground group-hover:text-foreground transition-colors">CGPA</p>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-primary text-sm font-medium">
+                    <Award className="w-4 h-4" />
+                    Sexton Scholar
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Scholarships Card */}
+            <Card className="p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:-rotate-1 cursor-pointer group border-0 bg-gradient-to-br from-card to-card/50 backdrop-blur-sm hover:scale-105">
+              <div className="space-y-6">
+                <div className="text-center">
+                  <Award className="w-10 h-10 mx-auto text-secondary group-hover:animate-bounce mb-4" />
+                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                    Scholarships
+                  </h3>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    "Dalhousie Chancellor's Scholarship",
+                    "Dalhousie Entrance Community & Leadership Award",
+                    "Dalhousie Global Renewable Scholar Award",
+                  ].map((scholarship, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-3 p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors group-hover:translate-x-2"
+                      style={{ transitionDelay: `${index * 100}ms` }}
+                    >
+                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                      <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                        {scholarship}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>

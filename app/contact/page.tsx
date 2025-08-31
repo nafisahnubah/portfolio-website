@@ -108,11 +108,11 @@ export default function ContactPage() {
               I’m always excited to meet new people, swap ideas, or chat about cool projects. If something here caught your eye, or you just feel like saying hi, drop me a message.
             </p>
 
-            <div className="flex items-center justify-center gap-2 text-muted-foreground animate-pulse">
+            {/* <div className="flex items-center justify-center gap-2 text-muted-foreground animate-pulse">
               <Coffee className="w-5 h-5" />
               <span>Coffee chats are always welcome!</span>
               <Heart className="w-5 h-5 text-red-500" />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

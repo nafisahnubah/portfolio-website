@@ -23,8 +23,11 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: "Nafisah Nubah - Portfolio",
-  description: "Computer Science Student at Dalhousie University - Full Stack Developer",
+  description: "Computer Science Student at Dalhousie University",
   generator: "v0.app",
+  icons: {
+    icon: "/favicon.ico",
+  },
 }
 
 export default function RootLayout({

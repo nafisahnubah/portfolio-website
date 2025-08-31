@@ -28,66 +28,12 @@ const projects = [
   },
   {
     id: 2,
-    title: "RateEase",
-    subtitle: "Service Review Application System",
-    description:
-      "Developed a scalable full-stack service review platform allowing users to log in, post, and manage reviews using RESTful APIs. Enhanced user engagement by 20%.",
-    longDescription:
-      "A comprehensive review platform with user authentication, review management, and responsive design. Built with modern web technologies and focuses on user experience.",
-    technologies: ["React.js", "Node.js", "MongoDB", "Firebase", "React Router", "Tailwind CSS"],
-    category: "Full-Stack",
-    year: "2024",
-    status: "Completed",
-    image: "/modern-review-application-interface.png",
-    github: "https://github.com/nafisahnubah/rateease-client-side",
-    demo: "#",
-    icon: Globe,
-    gradient: "from-blue-500 to-cyan-500",
-  },
-  {
-    id: 3,
-    title: "LBook",
-    subtitle: "Library Inventory Management System",
-    description:
-      "Developed a full-stack web application to streamline book cataloging and user tracking with MySQL database for fast, reliable data retrieval.",
-    longDescription:
-      "A complete library management solution with book cataloging, user management, and inventory tracking. Features CRUD operations and responsive design.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Git"],
-    category: "Full-Stack",
-    year: "2024",
-    status: "Completed",
-    image: "/library-management-system-interface.png",
-    github: "https://github.com/nafisahnubah/lbook",
-    demo: "#",
-    icon: Database,
-    gradient: "from-green-500 to-emerald-500",
-  },
-  {
-    id: 4,
-    title: "AquaTrack",
-    subtitle: "Water Quality Analysis Dashboard",
-    description:
-      "Developed an interactive web app using Python and Django to analyze and visualize water quality trends using 10+ years of historical data.",
-    longDescription:
-      "An environmental monitoring dashboard that provides insights into water quality trends, anomaly detection, and data visualization for informed decision-making.",
-    technologies: ["Python", "Django", "Data Analysis", "Git", "GitHub", "Jira", "Agile"],
-    category: "Data Analysis",
-    year: "2024",
-    status: "Completed",
-    image: "/water-quality-data-dashboard-with-charts.png",
-    github: "https://github.com/Ruddraw/OceanData",
-    demo: "#",
-    icon: Code,
-    gradient: "from-orange-500 to-red-500",
-  },
-  {
-    id: 5,
     title: "Normalized Entity Parser (NEP)",
     subtitle: "Java Tool for Processing SARS Exam Rosters",
     description:
-      "Built a Java-based application that converts university exam roster PDFs into structured, easy-to-use summaries.",
+      "Collaborated with a team to build a Java-based application for Dalhousie's Student Accessibility Centre that converts university exam roster PDFs into structured, easy-to-use summaries.",
     longDescription:
-      "NEP (Normalized Entity Parser) automates the extraction and grouping of exam data—course codes, times, locations, and student counts—from SARS-generated rosters. It outputs clean text summaries to reduce manual workload and improve exam scheduling efficiency at the Accessibility Center.",
+      "NEP (Normalized Entity Parser) automates the extraction and grouping of exam data (course codes, times, locations, and student counts) from SARS-generated rosters. It outputs clean text summaries to reduce manual workload and improve exam scheduling efficiency at the Accessibility Center.",
     technologies: ["Java", "Swing GUI", "Apache PDFBox", "Launch4j", "Git"],
     category: "Tooling",
     year: "2025",
@@ -99,61 +45,79 @@ const projects = [
     gradient: "from-purple-500 to-indigo-500",
   },
   {
-    id: 6,
-    title: "PrediHome",
-    subtitle: "Interactive Housing & Employment Analytics Across Canada",
+    id: 3,
+    title: "RateEase",
+    subtitle: "Service Review Application System",
     description:
-      "Built an R/Shiny web app that helps users evaluate the most affordable and promising provinces to live in based on housing prices and employment indicators.",
+      "Developed a scalable full-stack service review platform allowing users to log in, post, and manage reviews using RESTful APIs.",
     longDescription:
-      "PrediHome is a data-driven web application leveraging housing price index (HPI), unemployment, and employment rate data to guide users toward the best provinces to live in. Users can select a year (1986–2035) to explore historical and predictive analytics. The app highlights the province with the lowest HPI and unemployment rate, displays interactive bar charts, and calculates a composite score combining key metrics to recommend the top province overall.",
-    technologies: ["R", "Shiny", "ggplot2", "dplyr", "tidyr", "Linear Regression (lm)"],
-    category: "Data Analysis",
-    year: "2025",
+      "A comprehensive review platform with user authentication, review management, and responsive design. Built with modern web technologies and focuses on user experience.",
+    technologies: ["React.js", "Node.js", "MongoDB", "Firebase", "React Router", "Tailwind CSS"],
+    category: "Full-Stack",
+    year: "2024",
     status: "Completed",
-    image: "/predihome-dashboard.png", // placeholder; use a screenshot of the app UI
-    github: "https://github.com/RafatH0ssain/PrediHome",
+    image: "/ratease.png",
+    github: "https://github.com/nafisahnubah/rateease-client-side",
+    demo: "https://taupe-elf-0b4f7f.netlify.app/",
+    icon: Globe,
+    gradient: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 4,
+    title: "LBook",
+    subtitle: "Library Inventory Management System",
+    description:
+      "Collaborated with a team to develop a full-stack web application to streamline book cataloging and user tracking with MySQL database for fast, reliable data retrieval.",
+    longDescription:
+      "A complete library management solution with book cataloging, user management, and inventory tracking. Features CRUD operations and responsive design.",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Git"],
+    category: "Full-Stack",
+    year: "2024",
+    status: "Completed",
+    image: "/lbook.jpeg",
+    github: "https://github.com/nafisahnubah/lbook",
+    demo: "#",
+    icon: Database,
+    gradient: "from-green-500 to-emerald-500",
+  },
+  {
+    id: 5,
+    title: "AquaTrack",
+    subtitle: "Water Quality Analysis Dashboard",
+    description:
+      "Collaborated with a team for DeepSense's Ocean of Data Challenge to develop an interactive web app using Python and Django that analyzes and visualizes water quality trends using 10+ years of historical data.",
+    longDescription:
+      "An environmental monitoring dashboard that provides insights into water quality trends, anomaly detection, and data visualization for informed decision-making.",
+    technologies: ["Python", "Django", "Data Analysis", "Git", "Jira", "Agile"],
+    category: "Data Analysis",
+    year: "2024",
+    status: "Completed",
+    image: "/aqua.png",
+    github: "https://github.com/Ruddraw/OceanData",
+    demo: "https://www.youtube.com/watch?v=uxkQomTASvo",
+    icon: Code,
+    gradient: "from-orange-500 to-red-500",
+  },
+  {
+    id: 6,
+    title: "Portfolio Website",
+    subtitle: "Personal Portfolio to Showcase Projects, Skills & Experience",
+    description:
+      "Designed and implemented my personal portfolio website to highlight my work, credentials, and journey in one intuitive web experience.",
+    longDescription:
+      "Built a responsive portfolio site that organizes my certifications, work experiences, and projects into a clean, accessible layout. Developed with a focus on usability and design coherence, it serves as a central showcase of my skills and professional growth.",
+    technologies: ["Next.js", "Tailwind CSS", "Responsive Design"],
+    category: "Frontend",
+    year: "2025",
+    status: "Current",
+    image: "/portfolio.png",
+    github: "https://github.com/nafisahnubah/portfolio-website",
     demo: "#",
     icon: Globe,
-    gradient: "from-teal-500 to-green-500",
+    gradient: "from-blue-500 to-blue-700",
   },
   {
     id: 7,
-    title: "JSON Compiler (Frontend)",
-    subtitle: "Recursive-Descent Parser & Scanner for JSON",
-    description:
-      "Developed a Python-based recursive-descent parser that processes JSON token streams to generate syntax trees (ASTs), implementing both lexical scanning and syntactic/semantic analysis.",
-    longDescription:
-      "This project implements a recursive-descent parser using Python to process JSON token streams from text files. It includes both a scanner and parser to perform syntactic and semantic analysis, constructing Abstract Syntax Trees that reflect the JSON grammar. The tool can process valid JSON inputs and output structured AST representations, demonstrating fundamentals of compiler design.",
-    technologies: ["Python", "Recursive-Descent Parser", "Lexer/Scanner", "AST Generation", "File I/O"],
-    category: "Tooling",
-    year: "2025",
-    status: "Completed",
-    image: "/json-parser-demo.png", // you can replace this with a screenshot showing the AST or sample input/output
-    github: "https://github.com/nafisahnubah/json-compiler-frontend",
-    demo: "#",
-    icon: Code,
-    gradient: "from-gray-500 to-gray-700",
-  },
-  {
-    id: 8,
-    title: "Simple Board Game Simulation",
-    subtitle: "Java-Based 8×8 Grid Game Engine",
-    description:
-      "Implemented an interactive board game simulator in Java featuring diverse piece behaviors and user-driven commands.",
-    longDescription:
-      "This Java application simulates a board game on an 8×8 grid, allowing users to create and move different types of pieces—Slow, Fast, Flexible, and Fast Flexible—each with unique movement rules. It supports interactive command-based gameplay, dynamic board display, and validation logic to prevent invalid moves or actions. Built to demonstrate object-oriented design, command parsing, and real-time state updates.",
-    technologies: ["Java", "Object-Oriented Programming", "CLI", "Game Logic", "Command Parser"],
-    category: "Tooling",
-    year: "2025",
-    status: "Completed",
-    image: "/simple-board-game-ui.png", // Consider using a console screenshot or board layout visualization
-    github: "https://github.com/nafisahnubah/simple-board-game",
-    demo: "#",
-    icon: Code,
-    gradient: "from-yellow-500 to-yellow-700",
-  },
-  {
-    id: 9,
     title: "Color Contrast Checker 2",
     subtitle: "Lightweight WCAG Color Contrast NPM Tool",
     description:
@@ -170,32 +134,68 @@ const projects = [
     category: "Tooling",
     year: "2025",
     status: "Completed",
-    image: "/color-contrast-checker2-sample.png", // Consider using a code snippet or CLI output screenshot
+    image: "/color-contrast-accessibility-tool.png",
     github: "https://github.com/nafisahnubah/color-contrast-checker2",
-    demo: "#",
+    demo: "https://www.npmjs.com/package/color-contrast-checker2",
     icon: Code,
     gradient: "from-gray-400 to-gray-600",
   },
   {
-    id: 10,
-    title: "Portfolio Website",
-    subtitle: "Personal Portfolio to Showcase Projects, Skills & Experience",
+    id: 8,
+    title: "PrediHome",
+    subtitle: "Interactive Housing & Employment Analytics Across Canada",
     description:
-      "Designed and implemented my personal portfolio website to highlight my work, credentials, and journey in one intuitive web experience.",
+      "Built an R/Shiny web app with a team that helps users evaluate the most affordable and promising provinces to live in based on housing prices and employment indicators.",
     longDescription:
-      "Built a responsive portfolio site that organizes my certifications, work experiences, and projects into a clean, accessible layout. Developed with a focus on usability and design coherence, it serves as a central showcase of my skills and professional growth.",
-    technologies: ["React.js (or HTML/CSS/JS, depending on your stack)", "Tailwind CSS (or other styling tools)", "Responsive Design", "Accessibility"],
-    category: "Frontend",
+      "PrediHome is a data-driven web application leveraging housing price index (HPI), unemployment, and employment rate data to guide users toward the best provinces to live in. Users can select a year (1986–2035) to explore historical and predictive analytics. The app highlights the province with the lowest HPI and unemployment rate, displays interactive bar charts, and calculates a composite score combining key metrics to recommend the top province overall.",
+    technologies: ["R", "Shiny", "ggplot2", "dplyr", "tidyr"],
+    category: "Data Analysis",
     year: "2025",
-    status: "Current",
-    image: "/portfolio-website-screenshot.png", // consider a screenshot of your homepage or project gallery
-    github: "https://github.com/nafisahnubah/portfolio-website",
+    status: "Completed",
+    image: "/predihome.jpeg",
+    github: "https://github.com/RafatH0ssain/PrediHome",
     demo: "#",
     icon: Globe,
-    gradient: "from-blue-500 to-blue-700",
+    gradient: "from-teal-500 to-green-500",
   },
-
+  {
+    id: 9,
+    title: "JSON Compiler (Frontend)",
+    subtitle: "Recursive-Descent Parser & Scanner for JSON",
+    description:
+      "Developed a Python-based recursive-descent parser that processes JSON token streams to generate syntax trees (ASTs), implementing both lexical scanning and syntactic/semantic analysis.",
+    longDescription:
+      "This project implements a recursive-descent parser using Python to process JSON token streams from text files. It includes both a scanner and parser to perform syntactic and semantic analysis, constructing Abstract Syntax Trees that reflect the JSON grammar. The tool can process valid JSON inputs and output structured AST representations, demonstrating fundamentals of compiler design.",
+    technologies: ["Python", "Recursive-Descent Parser", "Lexer/Scanner", "AST Generation"],
+    category: "Tooling",
+    year: "2024",
+    status: "Completed",
+    image: "/json-compiler-abstract-visualization.png",
+    github: "https://github.com/nafisahnubah/json-compiler-frontend",
+    demo: "#",
+    icon: Code,
+    gradient: "from-gray-500 to-gray-700",
+  },
+  {
+    id: 10,
+    title: "Simple Board Game Simulation",
+    subtitle: "Java-Based 8×8 Grid Game Simulation",
+    description:
+      "Implemented an interactive board game simulator in Java featuring diverse piece behaviors and user-driven commands.",
+    longDescription:
+      "This Java application simulates a board game on an 8×8 grid, allowing users to create and move different types of pieces—Slow, Fast, Flexible, and Fast Flexible—each with unique movement rules. It supports interactive command-based gameplay, dynamic board display, and validation logic to prevent invalid moves or actions. Built to demonstrate object-oriented design, command parsing, and real-time state updates.",
+    technologies: ["Java", "Object-Oriented Programming", "CLI", "Game Logic"],
+    category: "Tooling",
+    year: "2024",
+    status: "Completed",
+    image: "/simple-board-game-ui.png",
+    github: "https://github.com/nafisahnubah/simple-board-game",
+    demo: "#",
+    icon: Code,
+    gradient: "from-yellow-500 to-yellow-700",
+  },
 ]
+
 
 const categories = ["All", "Full-Stack", "Frontend", "Data Analysis", "Tooling"]
 

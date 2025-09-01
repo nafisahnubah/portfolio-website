@@ -18,6 +18,7 @@ import {
   Heart,
   Sparkles,
   CheckCircle,
+  Phone,
 } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect } from "react"
@@ -60,6 +61,13 @@ export default function ContactPage() {
       gradient: "from-blue-600 to-blue-800",
     },
     {
+      icon: Github,
+      label: "GitHub",
+      value: "nafisahnubah",
+      href: "https://github.com/nafisahnubah",
+      gradient: "from-gray-700 to-gray-900",
+    },
+    {
       icon: Mail,
       label: "Email",
       value: ["Nafisah.Nubah@dal.ca", "nafisahnubah@gmail.com"],
@@ -67,11 +75,11 @@ export default function ContactPage() {
       gradient: "from-red-500 to-pink-500",
     },
     {
-      icon: Github,
-      label: "GitHub",
-      value: "nafisahnubah",
-      href: "https://github.com/nafisahnubah",
-      gradient: "from-gray-700 to-gray-900",
+      icon: Phone,
+      label: "Phone",
+      value: "+1 (782) 882-7285",
+      href: "tel:+17828827285", 
+      gradient: "from-yellow-500 to-orange-500",
     },
     {
       icon: MapPin,

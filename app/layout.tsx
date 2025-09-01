@@ -6,6 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { LoadingScreen } from "@/components/loading-screen"
 import { Suspense } from "react"
 import "./globals.css"
+import { Footer } from "@/components/footer"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -42,7 +43,7 @@ export default function RootLayout({
           <LoadingScreen />
           <Navigation />
           <main className="pt-16 min-h-screen">{children}</main>
-          <Analytics />
+          <Footer />
         </Suspense>
       </body>
     </html>

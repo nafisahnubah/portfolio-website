@@ -26,7 +26,7 @@ export function Footer() {
     <footer className="border-t border-border bg-background/80 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Copyright */}
-        <p className="text-xs text-muted-foreground">
+        <p className="text-sm text-muted-foreground">
           © {new Date().getFullYear()} Nafisah Nubah. All rights reserved.
         </p>
 

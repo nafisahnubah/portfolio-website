@@ -11,14 +11,14 @@ const experiences = [
   {
     id: 1,
     title: "Student Researcher",
-    company: "Dalhousie Machine Learning Society",
+    company: "Dalhousie Machine Learning Society (DMLS)",
     location: "Halifax, NS",
     period: "2025",
     status: "Completed",
     certificate: "/DMLS_Certificate.pdf",
     type: "Research",
     description:
-      "Contributed to Neuro Imaging Analysis and Research (NIAR), a research project under Dr. Carlos R. Hernandez Castillo involving fMRI data analysis using machine learning to uncover biomarkers for diseases.",
+      "Contributed to the Neuro Imaging Analysis & Research (NIAR) project, carried out under the guidance of Dr. Carlos R. Hernandez-Castillo, applying machine learning to analyze fMRI data from SCA7 patients and control groups to identify early biomarkers of disease.",
     responsibilities: [
       "Collaborating with fellow researchers to explore advanced machine learning techniques for neuroscience data",
       "Analyzing fMRI data to identify potential disease biomarkers",

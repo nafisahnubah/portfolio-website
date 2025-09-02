@@ -56,8 +56,8 @@ const certifications = [
     title: "Fundamentals of Cloud Administration with Azure",
     issuer: "ShiftKey Labs",
     issueDate: "2025",
-    credentialId: "09308d08-9796-4db0-8b18-3f8d3e5e891c",
-    verificationUrl: "https://credsverse.com/credentials/09308d08-9796-4db0-8b18-3f8d3e5e891c",
+    credentialId: "e5258766-b644-4860-a2e0-46a246d1c410",
+    verificationUrl: "https://credsverse.com/credentials/e5258766-b644-4860-a2e0-46a246d1c410",
     description:
       "Specialized training in Microsoft Azure cloud administration, covering resource management, security, monitoring, and optimization of Azure environments.",
     skills: ["Microsoft Azure", "Cloud Administration", "Resource Management", "Security", "Monitoring"],

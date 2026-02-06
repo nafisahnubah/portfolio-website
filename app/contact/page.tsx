@@ -115,12 +115,6 @@ export default function ContactPage() {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               I’m always excited to meet new people, swap ideas, or chat about cool projects. If something here caught your eye, or you just feel like saying hi, drop me a message.
             </p>
-
-            {/* <div className="flex items-center justify-center gap-2 text-muted-foreground animate-pulse">
-              <Coffee className="w-5 h-5" />
-              <span>Coffee chats are always welcome!</span>
-              <Heart className="w-5 h-5 text-red-500" />
-            </div> */}
           </div>
         </div>
       </section>
@@ -139,7 +133,6 @@ export default function ContactPage() {
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
-                      <Sparkles className="w-6 h-6 text-primary" />
                       Say hi!
                     </h2>
                     <p className="text-muted-foreground">

@@ -3,7 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Briefcase, GraduationCap, Code, Users, Brain, Calendar, MapPin, ChevronRight, Award, MessageSquare } from "lucide-react"
+import { Briefcase, GraduationCap, Code, Users, Brain, Calendar, MapPin, ChevronRight } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 
@@ -84,7 +84,7 @@ const experiences = [
       "Adapting instruction methods to suit different learning styles",
     ],
     skills: ["Teaching", "Mentorship", "Communication", "Programming", "Youth Education"],
-    icon: Users,
+    icon: Code,
     gradient: "from-blue-500 to-cyan-500",
   },
   {
@@ -122,7 +122,7 @@ const experiences = [
       "Helping create a welcoming and supportive environment that encourages participation and community engagement",
     ],
     skills: ["Event Coordination", "Community Engagement", "Communication", "Teamwork"],
-    icon: MessageSquare,
+    icon: Users,
     gradient: "from-pink-500 to-red-500",
   },
   {
@@ -142,7 +142,7 @@ const experiences = [
       "Helping create a welcoming and supportive environment that encourages participation and community engagement",
     ],
     skills: ["Event Coordination", "Community Engagement", "Communication", "Teamwork"],
-    icon: MessageSquare,
+    icon: Users,
     gradient: "from-pink-500 to-red-500",
   },
   {
@@ -162,7 +162,7 @@ const experiences = [
       "Replying to DMs and comments to keep the online community engaged and active",
     ],
     skills: ["Social Media Management", "Content Creation", "Digital Marketing", "Community Engagement", "Communication"],
-    icon: MessageSquare,
+    icon: Users,
     gradient: "from-pink-500 to-red-500",
   },
   {

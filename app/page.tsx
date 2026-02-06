@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowRight, Code, Database, Globe, Sparkles, Github, Linkedin, Mail, Heart, Smile, BarChart, Book, Zap, Award, Activity, Trophy, GraduationCap } from "lucide-react"
+import { ArrowRight, Code, Database, Globe, Sparkles, Github, Linkedin, Mail, Heart, Smile, BarChart, Book, Zap, Award, Activity, Trophy, GraduationCap, Users } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
@@ -57,9 +57,6 @@ export default function HomePage() {
             className={`text-center space-y-8 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium animate-bounce hover:animate-pulse transition-all cursor-pointer hover:scale-105">
-              {/* <span className="text-lg animate-spin" style={{ animationDuration: "2s" }}>
-                {emojis[currentEmoji]}
-              </span> */}
               <Smile className="w-4 h-4" />
               Hi there!
               <div className="w-2 h-2 bg-primary rounded-full animate-ping" />
@@ -138,38 +135,40 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-foreground mb-12 animate-in fade-in duration-1000 hover:animate-pulse cursor-default flex justify-center items-center gap-2">
             What I Do
-            <Sparkles className="w-6 h-6 font-extrabold text-yellow-700" />
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {[
               {
                 icon: Code,
                 title: "Full-Stack & Web Development",
-                description: "React.js, Node.js, Python, Java - Building responsive, accessible, and interactive web applications",
+                description: "React.js, Node.js, .NET, C#, Python, Java - Building responsive, accessible, and interactive web applications",
                 color: "from-primary to-secondary",
-                emoji: "💻",
               },
               {
                 icon: Database,
                 title: "Cloud & Data Solutions",
                 description: "AWS, Azure, Firebase, MongoDB, MySQL - Scalable cloud architectures and data management",
                 color: "from-secondary to-accent",
-                emoji: "☁️",
               },
               {
                 icon: Sparkles,
                 title: "Teaching & Mentorship",
                 description: "Instructor, TA, and workshop experience simplifying complex CS concepts for students",
                 color: "from-yellow-400 to-yellow-600",
-                emoji: "🎓",
               },
               {
                 icon: Activity,
                 title: "Machine Learning & Analytics",
                 description: "Machine learning and data analysis research and projects, including fMRI and performance analytics",
                 color: "from-green-400 to-green-600",
-                emoji: "🔬",
-              }
+              },
+              {
+                icon: Users,
+                title: "Community & Leadership",
+                description:
+                  "Active in student societies and faculty initiatives — organizing events, supporting operations, building inclusive tech communities, and driving engagement through leadership and collaboration.",
+                color: "from-pink-500 to-red-500",
+              },
 
             ].map((item, index) => (
               <Card
@@ -186,7 +185,6 @@ export default function HomePage() {
                     >
                       <item.icon className="w-6 h-6 text-white" />
                     </div>
-                    {/* <span className="text-2xl group-hover:animate-bounce">{item.emoji}</span> */}
                   </div>
                   <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                     {item.title}
@@ -205,7 +203,7 @@ export default function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary/5 to-secondary/5 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-foreground mb-12 animate-in fade-in duration-1000 hover:animate-pulse cursor-default">
-            Academic Excellence <GraduationCap className="inline w-10 h-10 ml-2 text-primary" />
+            Academic Excellence
           </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -266,7 +264,6 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-center text-foreground mb-12 animate-in fade-in duration-1000 hover:animate-pulse cursor-default flex justify-center items-center gap-2">
             Quick Stats
-            <BarChart className="w-8 h-8 font-extrabold text-teal-700" />
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -294,19 +291,6 @@ export default function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-12 backdrop-blur-sm border border-primary/20 hover:scale-105 transition-transform duration-300">
-            <div className="flex justify-center mb-4">
-              {/* <div className="flex gap-2 text-3xl">
-                <span className="animate-bounce" style={{ animationDelay: "0s" }}>
-                  🤝
-                </span>
-                <span className="animate-bounce" style={{ animationDelay: "0.2s" }}>
-                  ✨
-                </span>
-                <span className="animate-bounce" style={{ animationDelay: "0.4s" }}>
-                  💡
-                </span>
-              </div> */}
-            </div>
             <h2 className="text-3xl font-bold text-foreground mb-4 animate-in fade-in duration-1000 hover:animate-pulse cursor-default">
               Get in Touch!
             </h2>
@@ -317,7 +301,6 @@ export default function HomePage() {
               <Button asChild size="lg" className="hover:scale-105 transition-all duration-300 hover:rotate-1 group">
                 <Link href="/experience">
                   Explore My Work
-                  <Sparkles className="ml-2 w-4 h-4 group-hover:animate-spin" />
                 </Link>
               </Button>
               <Button
@@ -328,7 +311,6 @@ export default function HomePage() {
               >
                 <Link href="/contact">
                   Let's Connect
-                  <Heart className="ml-2 w-4 h-4 group-hover:animate-pulse text-red-500" />
                 </Link>
               </Button>
             </div>

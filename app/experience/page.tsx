@@ -10,6 +10,27 @@ import { useState, useEffect } from "react"
 const experiences = [
   {
     id: 1,
+    title: "Application Developer",
+    company: "ImmediaC",
+    location: "Halifax, NS",
+    period: "Present",
+    status: "Current",
+    type: "Development",
+    description:
+      "Working as an Application Developer at ImmediaC, contributing to the development of a cloud-based enterprise resource planning (ERP) web application with AI integrations.",
+    responsibilities: [
+      "Developing and maintaining a full-stack ERP web application using React.js (frontend) and .NET/C# (backend)",
+      "Designing and implementing AI integrations to automate workflows",
+      "Collaborating in an Agile/Scrum team to design, develop, test, and deploy features",
+      "Deploying and managing cloud infrastructure and storage using Microsoft Azure",
+      "Working with cross-functional team members to translate business requirements into technical solutions"
+    ],
+    skills: ["Software Development", "AI Integrations", ".NET", "C#", "React.js", "Azure", "Agile Scrum"],
+    icon: Briefcase,
+    gradient: "from-orange-500 to-red-500",
+  },
+  {
+    id: 2,
     title: "Student Researcher",
     company: "Dalhousie Machine Learning Society (DMLS)",
     location: "Halifax, NS",
@@ -29,7 +50,26 @@ const experiences = [
     gradient: "from-purple-500 to-pink-500",
   },
   {
-    id: 2,
+    id: 3,
+    title: "Software Developer",
+    company: "Dalhousie University (Student Accessibility Centre)",
+    location: "Halifax, NS",
+    period: "2025",
+    status: "Completed",
+    type: "Development",
+    description:
+      "Developed a Java application to automate the scheduling and sorting of exams, enhancing operational efficiency.",
+    responsibilities: [
+      "Designed and implemented Java application for exam scheduling automation",
+      "Collaborated with a team member to design and implement new features",
+      "Improved operational efficiency through automated processes",
+    ],
+    skills: ["Java", "Software Development", "Automation", "Team Collaboration", "Problem Solving"],
+    icon: Briefcase,
+    gradient: "from-orange-500 to-red-500",
+  },
+  {
+    id: 4,
     title: "Computer Science Instructor",
     company: "SuperNOVA at Dalhousie University",
     location: "Halifax, NS",
@@ -48,26 +88,7 @@ const experiences = [
     gradient: "from-blue-500 to-cyan-500",
   },
   {
-    id: 3,
-    title: "Software Developer (Internal)",
-    company: "Student Accessibility Centre, Dalhousie University",
-    location: "Halifax, NS",
-    period: "2025",
-    status: "Completed",
-    type: "Development",
-    description:
-      "Developed a Java application to automate the scheduling and sorting of exams, enhancing operational efficiency.",
-    responsibilities: [
-      "Designed and implemented Java application for exam scheduling automation",
-      "Collaborated with a team member to design and implement new features",
-      "Improved operational efficiency through automated processes",
-    ],
-    skills: ["Java", "Software Development", "Automation", "Team Collaboration", "Problem Solving"],
-    icon: Briefcase,
-    gradient: "from-orange-500 to-red-500",
-  },
-  {
-    id: 4,
+    id: 5,
     title: "Teaching Assistant and Marker",
     company: "Dalhousie University",
     location: "Halifax, NS",
@@ -86,13 +107,52 @@ const experiences = [
     gradient: "from-green-500 to-emerald-500",
   },
   {
-    id: 5,
+    id: 6,
+    title: "Leadership Team Staff",
+    company: "Dalhousie Faculty of Computer Science",
+    location: "Halifax, NS",
+    period: "Present",
+    status: "Current",
+    type: "Community",
+    description:
+      "Supporting the faculty of Computer Science by assisting with operations, coordinating events, and fostering an inclusive and engaging community for students in technology.",
+    responsibilities: [
+      "Assisting in the planning and coordination of events, hackathons, and initiatives",
+      "Collaborating with full-time staff to support faculty operations",
+      "Helping create a welcoming and supportive environment that encourages participation and community engagement",
+    ],
+    skills: ["Event Coordination", "Community Engagement", "Communication", "Teamwork"],
+    icon: MessageSquare,
+    gradient: "from-pink-500 to-red-500",
+  },
+  {
+    id: 7,
+    title: "Upper Year Student Representative",
+    company: "Dalhousie Women in Tech Society",
+    location: "Halifax, NS",
+    period: "Present",
+    status: "Current",
+    type: "Community",
+    description:
+      "Supporting the society by assisting with society operations, coordinating events, and fostering an inclusive and engaging community for women and non-binary students in technology.",
+    responsibilities: [
+      "Assisting in the planning and coordination of society events, workshops, and initiatives",
+      "Collaborating with executive members to support day-to-day society operations",
+      "Representing upper-year students and voicing their feedback to improve society programs and activities",
+      "Helping create a welcoming and supportive environment that encourages participation and community engagement",
+    ],
+    skills: ["Event Coordination", "Community Engagement", "Communication", "Teamwork"],
+    icon: MessageSquare,
+    gradient: "from-pink-500 to-red-500",
+  },
+  {
+    id: 8,
     title: "Social Media Coordinator",
     company: "Dalhousie Machine Learning Society",
     location: "Halifax, NS",
     period: "Present",
     status: "Current",
-    type: "Communications",
+    type: "Community",
     description:
       "Managing the society’s digital presence by creating, scheduling, and monitoring content to highlight events, projects, and members while fostering community engagement.",
     responsibilities: [
@@ -105,9 +165,8 @@ const experiences = [
     icon: MessageSquare,
     gradient: "from-pink-500 to-red-500",
   },
-
   {
-    id: 6,
+    id: 9,
     title: "Invigilator",
     company: "Student Accessibility Centre, Dalhousie University",
     location: "Halifax, NS",
@@ -127,7 +186,7 @@ const experiences = [
     gradient: "from-indigo-500 to-purple-500",
   },
   {
-    id: 7,
+    id: 10,
     title: "Lunch Monitor",
     company: "Halifax Regional Centre for Education (HRCE)",
     location: "Halifax, NS",
@@ -152,7 +211,7 @@ const typeColors = {
   Education: "bg-blue-100 text-blue-800 border-blue-200",
   Development: "bg-green-100 text-green-800 border-green-200",
   Support: "bg-orange-100 text-orange-800 border-orange-200",
-  Communications: "bg-pink-100 text-pink-800 border-pink-200",
+  Community: "bg-pink-100 text-pink-800 border-pink-200",
 }
 
 export default function ExperiencePage() {

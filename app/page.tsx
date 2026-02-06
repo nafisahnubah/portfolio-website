@@ -166,7 +166,7 @@ export default function HomePage() {
                 icon: Users,
                 title: "Community & Leadership",
                 description:
-                  "Active in student societies and faculty initiatives — organizing events, supporting operations, building inclusive tech communities, and driving engagement through leadership and collaboration.",
+                  "Active in student societies and faculty initiatives - organizing events and building inclusive tech communities through leadership.",
                 color: "from-pink-500 to-red-500",
               },
 

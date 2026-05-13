@@ -25,6 +25,27 @@ const certifications = [
   },
   {
     id: 2,
+    title: "Deep Learning Specialization",
+    issuer: "DeepLearning.AI",
+    issueDate: "April 2026",
+    credentialId: "T2TDSZEPH6UR",
+    verificationUrl: "https://www.coursera.org/account/accomplishments/specialization/T2TDSZEPH6UR",
+    description:
+      "Comprehensive specialization covering neural networks, deep learning, CNNs, RNNs, transformers, and practical machine learning workflows using TensorFlow.",
+    skills: [
+      "Deep Learning",
+      "Neural Networks",
+      "TensorFlow",
+      "Machine Learning",
+      "CNNs",
+      "RNNs",
+    ],
+    icon: BookOpen,
+    gradient: "from-emerald-500 to-teal-500",
+    category: "Artificial Intelligence",
+  },
+  {
+    id: 3,
     title: "Practical Cybersecurity",
     issuer: "ShiftKey Labs",
     issueDate: "2025",
@@ -38,7 +59,7 @@ const certifications = [
     category: "Cybersecurity",
   },
   {
-    id: 3,
+    id: 4,
     title: "Cloud Foundations",
     issuer: "ShiftKey Labs",
     issueDate: "2025",
@@ -52,7 +73,7 @@ const certifications = [
     category: "Cloud Computing",
   },
   {
-    id: 4,
+    id: 5,
     title: "Fundamentals of Cloud Administration with Azure",
     issuer: "ShiftKey Labs",
     issueDate: "2025",

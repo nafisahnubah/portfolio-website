@@ -1,390 +1,264 @@
-"use client"
-
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github, Filter, Code, Database, Globe, Brain } from "lucide-react"
-import Link from "next/link"
-import { useState, useEffect } from "react"
-
-const projects = [
-  {
-    id: 1,
-    title: "DEEBug",
-    subtitle: "Web-Based Performance Bug Detection Tool",
-    description:
-      "Collaborated with a cross-functional team to develop a web-based tool for detecting and fixing performance bugs in deep learning models. Used Agile methodologies and Jira for project management.",
-    longDescription:
-      "A comprehensive tool that helps developers identify and resolve performance bottlenecks in deep learning models. Features real-time analysis, automated suggestions, and integration with popular ML frameworks.",
-    technologies: ["Python Flask", "Gemini API", "Google Cloud", "Jira", "React.js", "Tailwind CSS"],
-    category: "Full-Stack",
-    year: "2025",
-    status: "Completed",
-    image: "/modern-web-dashboard-for-ai-debugging-tool.png",
-    github: "#",
-    demo: "#",
-    icon: Brain,
-    gradient: "from-purple-500 to-pink-500",
-  },
-  {
-    id: 2,
-    title: "Normalized Entity Parser (NEP)",
-    subtitle: "Java Tool for Processing SARS Exam Rosters",
-    description:
-      "Collaborated with a team to build a Java-based application for Dalhousie's Student Accessibility Centre that converts university exam roster PDFs into structured, easy-to-use summaries.",
-    longDescription:
-      "NEP (Normalized Entity Parser) automates the extraction and grouping of exam data (course codes, times, locations, and student counts) from SARS-generated rosters. It outputs clean text summaries to reduce manual workload and improve exam scheduling efficiency at the Accessibility Center.",
-    technologies: ["Java", "Swing GUI", "Apache PDFBox", "Launch4j", "Git"],
-    category: "Tooling",
-    year: "2025",
-    status: "Completed",
-    image: "/nep.png",
-    github: "https://github.com/NepSauce/Normalized-Entity-Parser",
-    demo: "#",
-    icon: Database,
-    gradient: "from-purple-500 to-indigo-500",
-  },
-  {
-    id: 3,
-    title: "RateEase",
-    subtitle: "Service Review Application System",
-    description:
-      "Developed a scalable full-stack service review platform allowing users to log in, post, and manage reviews using RESTful APIs.",
-    longDescription:
-      "A comprehensive review platform with user authentication, review management, and responsive design. Built with modern web technologies and focuses on user experience.",
-    technologies: ["React.js", "Node.js", "MongoDB", "Firebase", "React Router", "Tailwind CSS"],
-    category: "Full-Stack",
-    year: "2024",
-    status: "Completed",
-    image: "/ratease.png",
-    github: "https://github.com/nafisahnubah/rateease-client-side",
-    demo: "https://taupe-elf-0b4f7f.netlify.app/",
-    icon: Globe,
-    gradient: "from-blue-500 to-cyan-500",
-  },
-  {
-    id: 4,
-    title: "LBook",
-    subtitle: "Library Inventory Management System",
-    description:
-      "Collaborated with a team to develop a full-stack web application to streamline book cataloging and user tracking with MySQL database for fast, reliable data retrieval.",
-    longDescription:
-      "A complete library management solution with book cataloging, user management, and inventory tracking. Features CRUD operations and responsive design.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Git"],
-    category: "Full-Stack",
-    year: "2024",
-    status: "Completed",
-    image: "/lbook.jpeg",
-    github: "https://github.com/nafisahnubah/lbook",
-    demo: "#",
-    icon: Database,
-    gradient: "from-green-500 to-emerald-500",
-  },
-  {
-    id: 5,
-    title: "AquaTrack",
-    subtitle: "Water Quality Analysis Dashboard",
-    description:
-      "Collaborated with a team for DeepSense's Ocean of Data Challenge to develop an interactive web app using Python and Django that analyzes and visualizes water quality trends using 10+ years of historical data.",
-    longDescription:
-      "An environmental monitoring dashboard that provides insights into water quality trends, anomaly detection, and data visualization for informed decision-making.",
-    technologies: ["Python", "Django", "Data Analysis", "Git", "Jira", "Agile"],
-    category: "Data Analysis",
-    year: "2024",
-    status: "Completed",
-    image: "/aqua.png",
-    github: "https://github.com/Ruddraw/OceanData",
-    demo: "https://www.youtube.com/watch?v=uxkQomTASvo",
-    icon: Code,
-    gradient: "from-orange-500 to-red-500",
-  },
-  {
-    id: 6,
-    title: "Portfolio Website",
-    subtitle: "Personal Portfolio to Showcase Projects, Skills & Experience",
-    description:
-      "Designed and implemented my personal portfolio website to highlight my work, credentials, and journey in one intuitive web experience.",
-    longDescription:
-      "Built a responsive portfolio site that organizes my certifications, work experiences, and projects into a clean, accessible layout. Developed with a focus on usability and design coherence, it serves as a central showcase of my skills and professional growth.",
-    technologies: ["Next.js", "Tailwind CSS", "Responsive Design"],
-    category: "Frontend",
-    year: "2025",
-    status: "Current",
-    image: "/portfolio.png",
-    github: "https://github.com/nafisahnubah/portfolio-website",
-    demo: "https://nafisah-nubah-portfolio.vercel.app/",
-    icon: Globe,
-    gradient: "from-blue-500 to-blue-700",
-  },
-  {
-    id: 7,
-    title: "Color Contrast Checker 2",
-    subtitle: "Lightweight WCAG Color Contrast NPM Tool",
-    description:
-      "Created a lightweight npm package to check if two colors meet WCAG contrast guidelines across different levels (AA, AAA, large-text variants).",
-    longDescription:
-      "Built a versatile JavaScript library that supports a wide variety of color formats—hex (3/6/8 digits), RGB(A), HSL(A), HSV(A), named CSS colors, and integer codecs. It calculates relative luminance, contrast ratios, and accessibility compliance (AA, AAA, AA_LARGE, AAA_LARGE) to help developers ensure visual accessibility.",
-    technologies: [
-      "JavaScript",
-      "WCAG",
-      "Accessibility",
-      "Color Parsing",
-      "npm"
-    ],
-    category: "Tooling",
-    year: "2025",
-    status: "Completed",
-    image: "/color-contrast-accessibility-tool.png",
-    github: "https://github.com/nafisahnubah/color-contrast-checker2",
-    demo: "https://www.npmjs.com/package/color-contrast-checker2",
-    icon: Code,
-    gradient: "from-gray-400 to-gray-600",
-  },
-  {
-    id: 8,
-    title: "PrediHome",
-    subtitle: "Interactive Housing & Employment Analytics Across Canada",
-    description:
-      "Built an R/Shiny web app with a team that helps users evaluate the most affordable and promising provinces to live in based on housing prices and employment indicators.",
-    longDescription:
-      "PrediHome is a data-driven web application leveraging housing price index (HPI), unemployment, and employment rate data to guide users toward the best provinces to live in. Users can select a year (1986–2035) to explore historical and predictive analytics. The app highlights the province with the lowest HPI and unemployment rate, displays interactive bar charts, and calculates a composite score combining key metrics to recommend the top province overall.",
-    technologies: ["R", "Shiny", "ggplot2", "dplyr", "tidyr"],
-    category: "Data Analysis",
-    year: "2025",
-    status: "Completed",
-    image: "/predihome.jpeg",
-    github: "https://github.com/RafatH0ssain/PrediHome",
-    demo: "#",
-    icon: Globe,
-    gradient: "from-teal-500 to-green-500",
-  },
-  {
-    id: 9,
-    title: "JSON Compiler (Frontend)",
-    subtitle: "Recursive-Descent Parser & Scanner for JSON",
-    description:
-      "Developed a Python-based recursive-descent parser that processes JSON token streams to generate syntax trees (ASTs), implementing both lexical scanning and syntactic/semantic analysis.",
-    longDescription:
-      "This project implements a recursive-descent parser using Python to process JSON token streams from text files. It includes both a scanner and parser to perform syntactic and semantic analysis, constructing Abstract Syntax Trees that reflect the JSON grammar. The tool can process valid JSON inputs and output structured AST representations, demonstrating fundamentals of compiler design.",
-    technologies: ["Python", "Recursive-Descent Parser", "Lexer/Scanner", "AST Generation"],
-    category: "Tooling",
-    year: "2024",
-    status: "Completed",
-    image: "/json-compiler-abstract-visualization.png",
-    github: "https://github.com/nafisahnubah/json-compiler-frontend",
-    demo: "#",
-    icon: Code,
-    gradient: "from-gray-500 to-gray-700",
-  },
-  {
-    id: 10,
-    title: "Simple Board Game Simulation",
-    subtitle: "Java-Based 8×8 Grid Game Simulation",
-    description:
-      "Implemented an interactive board game simulator in Java featuring diverse piece behaviors and user-driven commands.",
-    longDescription:
-      "This Java application simulates a board game on an 8×8 grid, allowing users to create and move different types of pieces—Slow, Fast, Flexible, and Fast Flexible—each with unique movement rules. It supports interactive command-based gameplay, dynamic board display, and validation logic to prevent invalid moves or actions. Built to demonstrate object-oriented design, command parsing, and real-time state updates.",
-    technologies: ["Java", "Object-Oriented Programming", "CLI", "Game Logic"],
-    category: "Tooling",
-    year: "2024",
-    status: "Completed",
-    image: "/simple-board-game-ui.png",
-    github: "https://github.com/nafisahnubah/simple-board-game",
-    demo: "#",
-    icon: Code,
-    gradient: "from-yellow-500 to-yellow-700",
-  },
-]
-
-
-const categories = ["All", "Full-Stack", "Frontend", "Data Analysis", "Tooling"]
+function Shelf({
+  title,
+  subtitle,
+  year,
+  img,
+  alt,
+  desc,
+  tags,
+  links,
+  first,
+  last,
+}: {
+  title: string
+  subtitle: string
+  year: string
+  img: string
+  alt: string
+  desc: string
+  tags: string[]
+  links: { label: string; href: string; primary?: boolean }[]
+  first?: boolean
+  last?: boolean
+}) {
+  return (
+    <details style={{ borderTop: first ? "1px solid var(--hair)" : undefined, borderBottom: last ? "1px solid var(--hair)" : undefined }}>
+      <summary
+        className="row grid grid-cols-[24px_1fr] sm:grid-cols-[24px_1fr_190px_80px] gap-x-3.5 gap-y-1 items-baseline"
+        style={{ padding: "14px 12px 14px 0" }}
+      >
+        <span className="chev">▶</span>
+        <span style={{ fontWeight: 600, fontSize: 17 }}>{title}</span>
+        <span className="col-span-2 sm:col-span-1" style={{ fontSize: 13.5, color: "rgba(47,58,47,.6)" }}>
+          {subtitle}
+        </span>
+        <span className="col-span-2 sm:col-span-1" style={{ fontSize: 13, color: "rgba(47,58,47,.5)" }}>
+          {year}
+        </span>
+      </summary>
+      <div
+        className="panel grid grid-cols-1 sm:grid-cols-[280px_1fr] gap-4 sm:gap-6 pl-4 sm:pl-[38px]"
+        style={{ paddingTop: 6, paddingRight: 12, paddingBottom: 22 }}
+      >
+        <img className="shot" src={img} alt={alt} style={{ width: "100%", aspectRatio: "4 / 3", objectFit: "cover" }} />
+        <div>
+          <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: "0 0 12px" }}>{desc}</p>
+          <div className="flex flex-wrap gap-1.5" style={{ marginBottom: 14 }}>
+            {tags.map((t) => (
+              <span key={t} className="tagx">
+                {t}
+              </span>
+            ))}
+          </div>
+          <div className="flex gap-2.5">
+            {links.map((l) => (
+              <a key={l.label} className={`btnx ${l.primary ? "btn-s" : "btn-o"}`} href={l.href} target="_blank" rel="noopener">
+                {l.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </details>
+  )
+}
 
 export default function ProjectsPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All")
-  const [isVisible, setIsVisible] = useState(false)
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
-
-  const filteredProjects =
-    selectedCategory === "All" ? projects : projects.filter((project) => project.category === selectedCategory)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-card to-background">
-      {/* Header Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div
-            className={`text-center space-y-6 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium">
-              <Code className="w-4 h-4" />
-              My Work
+    <div className="w-full" style={{ background: "var(--bg)" }}>
+      <div className="w-full" style={{ borderBottom: "2px solid var(--rule)" }}>
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-11 pt-14 pb-10">
+          <div className="max-w-[820px]">
+            <div className="kick" style={{ marginBottom: 14 }}>
+              Ten projects, 2024 to 2025
             </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground">
-              Featured{" "}
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Projects</span>
+            <h1 className="ser text-5xl sm:text-6xl" style={{ lineHeight: 1, margin: "0 0 18px" }}>
+              Things I built
             </h1>
-
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              A collection of projects showcasing my journey in software development, spanning web applications, data analysis, and interactive tools.
+            <p style={{ fontSize: 17, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: 0 }}>
+              Three that I would talk through in an interview, then the rest of the shelf. Screenshots are black and
+              white until you hover them.
             </p>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Filter Section */}
-      <section className="pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div
-            className={`flex flex-wrap justify-center gap-4 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-          >
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-              <Filter className="w-4 h-4" />
-              Filter by category:
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedCategory(category)}
-                  className="transition-all duration-300 hover:scale-105"
-                >
-                  {category}
-                </Button>
+      <div className="w-full" style={{ borderBottom: "2px solid var(--rule)" }}>
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1.25fr_1fr] gap-8 px-4 sm:px-11 py-11 items-center">
+          <img
+            className="shot"
+            src="/modern-web-dashboard-for-ai-debugging-tool.png"
+            alt="DEEBug dashboard"
+            style={{ width: "100%", aspectRatio: "16 / 10", objectFit: "cover" }}
+          />
+          <div>
+            <div className="kick">2025 · Full stack · Team of five</div>
+            <h2 className="ser" style={{ fontSize: 44, margin: "8px 0 12px" }}>
+              DEEBug
+            </h2>
+            <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: "0 0 14px" }}>
+              A web tool that detects performance bugs in deep learning models and explains the fix. I worked on the
+              Flask service and the Gemini powered explanation layer, in an Agile team tracked through Jira.
+            </p>
+            <div className="flex flex-wrap gap-1.5" style={{ marginBottom: 16 }}>
+              {["Python Flask", "Gemini API", "Google Cloud", "React.js", "Tailwind", "Jira"].map((t) => (
+                <span key={t} className="tagx">
+                  {t}
+                </span>
               ))}
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Projects Grid */}
-      <section className="pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {filteredProjects.map((project, index) => (
-              <Card
-                key={project.id}
-                className={`group overflow-hidden border-0 bg-gradient-to-br from-card to-card/50 backdrop-blur-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
-                style={{ transitionDelay: `${index * 200}ms` }}
-                onMouseEnter={() => setHoveredProject(project.id)}
-                onMouseLeave={() => setHoveredProject(null)}
-              >
-                {/* Project Image */}
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
-                  />
-
-                  {/* Project Icon */}
-                  <div
-                    className={`absolute top-4 left-4 w-12 h-12 bg-gradient-to-r ${project.gradient} rounded-lg flex items-center justify-center transition-transform duration-300 ${hoveredProject === project.id ? "scale-110" : ""}`}
-                  >
-                    <project.icon className="w-6 h-6 text-white" />
-                  </div>
-
-                  {/* Status Badge */}
-                  <div className="absolute top-4 right-4">
-                    <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm">
-                      {project.status}
-                    </Badge>
-                  </div>
-                </div>
-
-                {/* Project Content */}
-                <div className="p-6 space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                        {project.title}
-                      </h3>
-                      <span className="text-sm text-muted-foreground">{project.year}</span>
-                    </div>
-                    <p className="text-sm text-primary font-medium">{project.subtitle}</p>
-                  </div>
-
-                  <p className="text-muted-foreground leading-relaxed">
-                    {hoveredProject === project.id ? project.longDescription : project.description}
-                  </p>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies
-                      .slice(0, hoveredProject === project.id ? project.technologies.length : 4)
-                      .map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs hover:bg-primary/10 transition-colors">
-                          {tech}
-                        </Badge>
-                      ))}
-                    {!hoveredProject && project.technologies.length > 4 && (
-                      <Badge variant="outline" className="text-xs">
-                        +{project.technologies.length - 4} more
-                      </Badge>
-                    )}
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4">
-                    {project.github !== "#" && (
-                      <Button asChild size="sm" variant="outline" className="group/btn bg-transparent">
-                        <Link href={project.github} target="_blank">
-                          <Github className="w-4 h-4 mr-2 group-hover/btn:rotate-12 transition-transform" />
-                          Code
-                        </Link>
-                      </Button>
-                    )}
-                    {project.demo !== "#" && (
-                      <Button asChild size="sm" className="group/btn">
-                        <Link href={project.demo} target="_blank">
-                          <ExternalLink className="w-4 h-4 mr-2 group-hover/btn:translate-x-1 transition-transform" />
-                          Demo
-                        </Link>
-                      </Button>
-                    )}
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-card/30 to-card/50 backdrop-blur-sm">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-foreground">Building Forward</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              These projects represent my curiosity and drive to create, each one an opportunity to learn, experiment, and bring ideas to life.
+      <div className="w-full" style={{ borderBottom: "2px solid var(--rule)" }}>
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1fr_1.25fr] gap-8 px-4 sm:px-11 py-11 items-center">
+          <div className="order-2 lg:order-1">
+            <div className="kick">2025 · Java tooling · Still in use</div>
+            <h2 className="ser" style={{ fontSize: 44, margin: "8px 0 12px" }}>
+              Normalized Entity Parser
+            </h2>
+            <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: "0 0 14px" }}>
+              Exam roster PDFs in, grouped summaries out. Built with one other developer for Dalhousie&apos;s Student
+              Accessibility Centre, packaged as a Windows executable so nobody needed a terminal.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {/* <Button asChild size="lg" className="hover:scale-105 transition-all duration-300">
-                <Link href="/contact">Get In Touch</Link>
-              </Button> */}
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="hover:scale-105 transition-all duration-300 bg-transparent"
-              >
-                <Link href="/experience">View Experience</Link>
-              </Button>
+            <div className="flex flex-wrap gap-1.5" style={{ marginBottom: 16 }}>
+              {["Java", "Swing GUI", "Apache PDFBox", "Launch4j"].map((t) => (
+                <span key={t} className="tagx">
+                  {t}
+                </span>
+              ))}
             </div>
+            <a className="btnx btn-o" href="https://github.com/NepSauce/Normalized-Entity-Parser" target="_blank" rel="noopener">
+              Source on GitHub
+            </a>
+          </div>
+          <img
+            className="shot order-1 lg:order-2"
+            src="/nep.png"
+            alt="Normalized Entity Parser"
+            style={{ width: "100%", aspectRatio: "16 / 10", objectFit: "cover" }}
+          />
+        </div>
+      </div>
+
+      <div className="w-full" style={{ borderBottom: "2px solid var(--rule)" }}>
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1.25fr_1fr] gap-8 px-4 sm:px-11 py-11 items-center">
+          <img
+            className="shot"
+            src="/color-contrast-accessibility-tool.png"
+            alt="color-contrast-checker2"
+            style={{ width: "100%", aspectRatio: "16 / 10", objectFit: "cover" }}
+          />
+          <div>
+            <div className="kick">2025 · Published on npm</div>
+            <h2 className="ser" style={{ fontSize: 44, margin: "8px 0 12px" }}>
+              color-contrast-checker2
+            </h2>
+            <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: "0 0 14px" }}>
+              A small library that answers one question well: do these two colours pass WCAG. Relative luminance,
+              contrast ratios, AA, AAA and both large text variants, across hex, rgb, hsl, hsv, named and integer
+              inputs.
+            </p>
+            <div className="flex flex-wrap gap-1.5" style={{ marginBottom: 16 }}>
+              {["JavaScript", "WCAG", "Accessibility", "npm"].map((t) => (
+                <span key={t} className="tagx">
+                  {t}
+                </span>
+              ))}
+            </div>
+            <a className="btnx btn-o" href="https://www.npmjs.com/package/color-contrast-checker2" target="_blank" rel="noopener">
+              View on npm
+            </a>
           </div>
         </div>
-      </section>
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-11 py-11">
+        <h2 className="ser text-3xl" style={{ margin: "0 0 6px" }}>
+          The rest of the shelf
+        </h2>
+        <p style={{ fontSize: 14.5, color: "rgba(47,58,47,.6)", margin: "0 0 22px" }}>Seven more. Click one to open it.</p>
+
+        <Shelf
+          first
+          title="RateEase"
+          subtitle="Full stack review platform"
+          year="2024"
+          img="/ratease.png"
+          alt="RateEase"
+          desc="A scalable service review platform where users log in, post and manage reviews through RESTful APIs. Authentication, review management and a responsive front end."
+          tags={["React.js", "Node.js", "MongoDB", "Firebase"]}
+          links={[
+            { label: "Code", href: "https://github.com/nafisahnubah/rateease-client-side" },
+            { label: "Live demo", href: "https://taupe-elf-0b4f7f.netlify.app/", primary: true },
+          ]}
+        />
+        <Shelf
+          title="AquaTrack"
+          subtitle="Water quality dashboard"
+          year="2024"
+          img="/aqua.png"
+          alt="AquaTrack"
+          desc="Built for DeepSense's Ocean of Data Challenge. A Django app that analyses and visualises water quality trends across more than ten years of historical readings, with anomaly detection."
+          tags={["Python", "Django", "Data analysis"]}
+          links={[
+            { label: "Code", href: "https://github.com/Ruddraw/OceanData" },
+            { label: "Walkthrough", href: "https://www.youtube.com/watch?v=uxkQomTASvo", primary: true },
+          ]}
+        />
+        <Shelf
+          title="PrediHome"
+          subtitle="Housing analytics in R"
+          year="2025"
+          img="/predihome.jpeg"
+          alt="PrediHome"
+          desc="An R and Shiny app that ranks Canadian provinces on affordability, using housing price index, unemployment and employment data from 1986 through projections to 2035."
+          tags={["R", "Shiny", "ggplot2", "dplyr"]}
+          links={[{ label: "Code", href: "https://github.com/RafatH0ssain/PrediHome" }]}
+        />
+        <Shelf
+          title="LBook"
+          subtitle="Library inventory system"
+          year="2024"
+          img="/lbook.jpeg"
+          alt="LBook"
+          desc="A team built web application for book cataloguing and borrower tracking, on a MySQL database tuned for fast retrieval."
+          tags={["PHP", "MySQL", "JavaScript"]}
+          links={[{ label: "Code", href: "https://github.com/nafisahnubah/lbook" }]}
+        />
+        <Shelf
+          title="JSON Compiler"
+          subtitle="Recursive descent parser"
+          year="2024"
+          img="/json-compiler-abstract-visualization.png"
+          alt="JSON compiler"
+          desc="A Python scanner and recursive descent parser that takes JSON token streams and builds abstract syntax trees, with syntactic and semantic analysis on the way through."
+          tags={["Python", "Lexer", "AST generation"]}
+          links={[{ label: "Code", href: "https://github.com/nafisahnubah/json-compiler-frontend" }]}
+        />
+        <Shelf
+          title="Board Game Simulation"
+          subtitle="Java, 8 by 8 grid"
+          year="2024"
+          img="/simple-board-game-ui.png"
+          alt="Board game simulation"
+          desc="Four piece types, each with its own movement rules, on a command driven board. Written to get object oriented design and command parsing right."
+          tags={["Java", "OOP", "CLI"]}
+          links={[{ label: "Code", href: "https://github.com/nafisahnubah/simple-board-game" }]}
+        />
+        <Shelf
+          last
+          title="This portfolio"
+          subtitle="Next.js, redesigned 2026"
+          year="2025"
+          img="/portfolio.png"
+          alt="Portfolio site"
+          desc="The site you are reading. Next.js and Tailwind, rebuilt in 2026 around a ruled editorial grid, keyboard reachable disclosure rows and a cursor reactive hero."
+          tags={["Next.js", "Tailwind CSS", "Accessibility"]}
+          links={[{ label: "Code", href: "https://github.com/nafisahnubah/portfolio-website" }]}
+        />
+      </div>
     </div>
   )
 }

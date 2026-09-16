@@ -1,46 +1,32 @@
 "use client"
 
 import Link from "next/link"
-import { Github, Linkedin, Mail } from "lucide-react"
 
 const socials = [
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/nafisah-nubah-3a355829b",
-    icon: Linkedin,
-  },
-  {
-    name: "GitHub",
-    href: "https://github.com/nafisahnubah",
-    icon: Github,
-  },
-  {
-    name: "Email",
-    href: "mailto:Nafisah.Nubah@dal.ca",
-    icon: Mail,
-  },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/nafisah-nubah-3a355829b" },
+  { name: "GitHub", href: "https://github.com/nafisahnubah" },
+  { name: "Email", href: "mailto:Nafisah.Nubah@dal.ca" },
 ]
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background/80 backdrop-blur-sm">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        {/* Copyright */}
-        <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Nafisah Nubah. All rights reserved.
-        </p>
-
-        {/* Social Icons */}
-        <div className="flex space-x-4">
+    <footer style={{ borderTop: "2px solid var(--rule)" }}>
+      <div
+        className="px-4 sm:px-11 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 flex-wrap"
+        style={{ fontSize: 12.5, color: "rgba(47,58,47,.55)" }}
+      >
+        <span>© {new Date().getFullYear()} Nafisah Nubah</span>
+        <div className="flex gap-5">
           {socials.map((social) => (
             <Link
               key={social.name}
               href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              target={social.href.startsWith("http") ? "_blank" : undefined}
+              rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="navlink"
+              style={{ fontSize: 12.5 }}
             >
-              <social.icon className="h-5 w-5" />
+              {social.name}
             </Link>
           ))}
         </div>

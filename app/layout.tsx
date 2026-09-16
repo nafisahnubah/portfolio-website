@@ -1,30 +1,31 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Poppins, Nunito } from "next/font/google"
+import { Archivo, Instrument_Serif } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Navigation } from "@/components/navigation"
-import { LoadingScreen } from "@/components/loading-screen"
 import { Suspense } from "react"
 import "./globals.css"
 import { Footer } from "@/components/footer"
 
-const poppins = Poppins({
+const archivo = Archivo({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-poppins",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-archivo",
+  weight: ["400", "500", "600", "800"],
 })
 
-const nunito = Nunito({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-nunito",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-instrument-serif",
+  weight: ["400"],
+  style: ["normal", "italic"],
 })
 
 export const metadata: Metadata = {
-  title: "Nafisah Nubah - Portfolio",
-  description: "Computer Science Student at Dalhousie University",
+  title: "Nafisah Nubah, Software developer, ML researcher",
+  description:
+    "Portfolio of Nafisah Nubah, fourth year computer science student at Dalhousie University. Software development, machine learning research, and teaching.",
   generator: "v0.app",
   icons: {
     icon: "/favicon.ico",
@@ -38,13 +39,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${nunito.variable} ${poppins.variable} antialiased`}>
-        <Suspense fallback={<div>Loading...</div>}>
-          <LoadingScreen />
+      <body className={`${archivo.variable} ${instrumentSerif.variable} antialiased`}>
+        <Suspense fallback={null}>
           <Navigation />
-          <main className="pt-16 min-h-screen">{children}</main>
+          <main className="min-h-screen">{children}</main>
           <Footer />
         </Suspense>
+        <Analytics />
       </body>
     </html>
   )

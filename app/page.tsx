@@ -55,7 +55,7 @@ export default function HomePage() {
       <div className="w-full" style={{ borderBottom: "2px solid var(--rule)" }}>
         <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-4">
           {[
-            { n: "04", label: "Development", detail: "Quest Software, ImmediaC, Computing Councils of Canada, Dalhousie Student Accessibility Centre" },
+            { n: "04", label: "Development", detail: "Quest Software Inc., ImmediaC, Computing Councils of Canada, Dalhousie Student Accessibility Centre" },
             { n: "02", label: "Research", detail: "Glacier melt research, fMRI analysis for SCA7" },
             { n: "05", label: "Community", detail: "Dalhousie Machine Learning Society, Women in Tech Society, Faculty of Computer Science" },
             { n: "04", label: "Teaching and support", detail: "SuperNOVA camps, web development labs, exam invigilation" },
@@ -147,7 +147,7 @@ export default function HomePage() {
               A short version
             </h2>
             <p style={{ fontSize: 15.5, lineHeight: 1.65, color: "rgba(47,58,47,.78)", margin: "0 0 14px" }}>
-              I&apos;m a software developer with experience in full stack and cloud applications. At Quest Software I
+              I&apos;m a software developer with experience in full stack and cloud applications. At Quest Software Inc. I
               work on backend services using C# and .NET on Azure. At ImmediaC I worked on an ERP platform built
               with React and .NET, including AI features using the OpenAI API. At Dalhousie&apos;s Student
               Accessibility Centre I built a Java tool that automates exam scheduling.

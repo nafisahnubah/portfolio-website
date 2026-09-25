@@ -147,7 +147,7 @@ export default function ExperiencePage() {
       </div>
 
       <Stack n="01" label="Software development">
-        <OrgRow org="Quest Software" location="Remote · current">
+        <OrgRow org="Quest Software Inc." location="Remote · current">
           <Role
             title="Software Developer"
             date="current"
@@ -334,6 +334,19 @@ export default function ExperiencePage() {
       </Stack>
 
       <Stack n="04" label="Teaching and student support">
+        <OrgRow org="Dalhousie Women in Tech Society" location="Halifax, NS · current">
+          <Role
+            title="Mentor"
+            date="current"
+            current
+            desc="Mentor in the society's mentorship program."
+            bullets={[
+              "Mentor multiple students on academics, co-ops and career planning",
+              "Mentor alongside my role as the program lead",
+            ]}
+            tags={["Mentorship", "Career advice"]}
+          />
+        </OrgRow>
         <OrgRow org="SuperNOVA at Dalhousie" location="Halifax, NS · 2025">
           <Role
             title="Computer Science Instructor"

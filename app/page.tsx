@@ -56,7 +56,7 @@ export default function HomePage() {
         <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-4">
           {[
             { n: "04", label: "Development", detail: "Quest Software Inc., ImmediaC, Computing Councils of Canada, Dalhousie Student Accessibility Centre" },
-            { n: "02", label: "Research", detail: "Glacier melt research, fMRI analysis for SCA7" },
+            { n: "02", label: "Research", detail: "Honours thesis on network intrusion detection, glacier melt research, fMRI analysis for SCA7" },
             { n: "05", label: "Community", detail: "Dalhousie Machine Learning Society, Women in Tech Society, Faculty of Computer Science" },
             { n: "04", label: "Teaching and support", detail: "SuperNOVA camps, web development labs, peer mentorship, exam invigilation" },
           ].map((s, i) => {
@@ -154,8 +154,9 @@ export default function HomePage() {
             </p>
             <p style={{ fontSize: 15.5, lineHeight: 1.65, color: "rgba(47,58,47,.78)", margin: 0 }}>
               I also do machine learning research at Dalhousie, where I&apos;m studying glacier melt patterns using
-              satellite data. Before that, I analyzed fMRI data through the Dalhousie Machine Learning Society to
-              look for biomarkers in SCA7 patients.
+              satellite data and working on my Honours thesis on detecting rare attack types in network intrusion
+              detection. Before that, I analyzed fMRI data through the Dalhousie Machine Learning Society to look for
+              biomarkers in SCA7 patients.
             </p>
             <p style={{ fontSize: 15.5, lineHeight: 1.65, color: "rgba(47,58,47,.78)", margin: "14px 0 0" }}>
               Outside my technical roles, I lead a mentorship program with the Dalhousie Women in Tech Society, host

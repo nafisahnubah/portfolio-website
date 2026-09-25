@@ -58,7 +58,7 @@ export default function HomePage() {
             { n: "04", label: "Development", detail: "Quest Software Inc., ImmediaC, Computing Councils of Canada, Dalhousie Student Accessibility Centre" },
             { n: "02", label: "Research", detail: "Glacier melt research, fMRI analysis for SCA7" },
             { n: "05", label: "Community", detail: "Dalhousie Machine Learning Society, Women in Tech Society, Faculty of Computer Science" },
-            { n: "04", label: "Teaching and support", detail: "SuperNOVA camps, web development labs, exam invigilation" },
+            { n: "04", label: "Teaching and support", detail: "SuperNOVA camps, web development labs, peer mentorship, exam invigilation" },
           ].map((s, i) => {
             const borderClasses = [
               "border-r border-b sm:border-b-0",

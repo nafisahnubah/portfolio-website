@@ -64,7 +64,12 @@ function Role({
           ))}
         </div>
         {extraLink && (
-          <a className="btnx btn-o" href={extraLink.href} style={{ marginTop: 14 }}>
+          <a
+            className="btnx btn-o"
+            href={extraLink.href}
+            style={{ marginTop: 14 }}
+            {...(extraLink.href.startsWith("http") ? { target: "_blank", rel: "noopener" } : {})}
+          >
             {extraLink.label}
           </a>
         )}
@@ -234,6 +239,7 @@ export default function ExperiencePage() {
               "Running image segmentation and temporal analysis on ice coverage",
             ]}
             tags={["Machine learning", "Google Earth Engine", "Image segmentation", "Python"]}
+            extraLink={{ label: "View website", href: "https://mapslab.tech/people/" }}
           />
           <Role
             title="Honours Thesis Researcher, MYTech Lab"
@@ -246,6 +252,7 @@ export default function ExperiencePage() {
               "Comparing it against modern SMOTE variants on the UNSW-NB15 and NSL-KDD datasets",
             ]}
             tags={["Machine learning", "Network intrusion detection", "Contrastive learning", "Python", "PyTorch"]}
+            extraLink={{ label: "View website", href: "https://mytechlab.cs.dal.ca/" }}
           />
         </OrgRow>
         <OrgRow org="Dalhousie Machine Learning Society" location="Halifax, NS · 2025">
@@ -259,7 +266,7 @@ export default function ExperiencePage() {
               "Contributed findings toward publications and presentations",
             ]}
             tags={["fMRI analysis", "Neuroscience", "Python"]}
-            extraLink={{ label: "View certificate", href: "/certifications" }}
+            extraLink={{ label: "View certificate", href: "https://nafisah-nubah-portfolio.vercel.app/DMLS_Certificate.pdf" }}
           />
         </OrgRow>
       </Stack>

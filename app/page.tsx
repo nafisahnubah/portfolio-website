@@ -157,6 +157,11 @@ export default function HomePage() {
               satellite data. Before that, I analyzed fMRI data through the Dalhousie Machine Learning Society to
               look for biomarkers in SCA7 patients.
             </p>
+            <p style={{ fontSize: 15.5, lineHeight: 1.65, color: "rgba(47,58,47,.78)", margin: "14px 0 0" }}>
+              Outside my technical roles, I lead a mentorship program with the Dalhousie Women in Tech Society, host
+              workshops and events with the Dalhousie Machine Learning Society, and help organize events and
+              initiatives on the Faculty of Computer Science Leadership Team.
+            </p>
           </div>
           <div className="px-4 sm:px-11 py-11">
             <div className="kick" style={{ marginBottom: 14 }}>

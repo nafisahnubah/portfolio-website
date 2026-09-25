@@ -76,7 +76,7 @@ export default function ProjectsPage() {
               Projects
             </h1>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: 0 }}>
-              A few of my main projects, followed by the rest. Screenshots are in grayscale until you hover over them.
+              A few of my main projects, followed by the rest.
             </p>
           </div>
         </div>

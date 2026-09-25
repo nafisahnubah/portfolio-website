@@ -268,9 +268,8 @@ export default function ExperiencePage() {
           />
           <Role
             title="Events and Media Lead"
-            date="current"
-            current
-            dotColor="var(--copper)"
+            date="previously"
+            dotColor="rgba(47,58,47,.3)"
             timelined
             bullets={[
               "Lead the planning and running of events, workshops and initiatives",

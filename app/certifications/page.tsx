@@ -66,14 +66,14 @@ export default function CertificationsPage() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-11 pt-14 pb-10">
           <div className="max-w-[820px]">
             <div className="kick" style={{ marginBottom: 14 }}>
-              Five credentials, all verifiable
+              Five certifications
             </div>
             <h1 className="ser text-5xl sm:text-6xl" style={{ lineHeight: 1, margin: "0 0 18px" }}>
               Certifications
             </h1>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: 0 }}>
-              Cloud, deep learning and security, in the order I took them. Every row links to the issuer&apos;s own
-              verification page.
+              My cloud, deep learning and cybersecurity certifications. Each one links to the issuer&apos;s verification
+              page.
             </p>
           </div>
         </div>

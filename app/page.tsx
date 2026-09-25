@@ -16,32 +16,30 @@ export default function HomePage() {
               <span>Halifax, Nova Scotia · open to 2027 new grad software and ML roles</span>
             </div>
             <h1 className="ser rise text-5xl sm:text-7xl lg:text-[84px]" style={{ lineHeight: 0.97, margin: "0 0 22px" }}>
-              Software developer,
+              Hi, I&apos;m Nafisah,
               <br />
-              machine learning
+              a software developer
               <br />
-              researcher, <em style={{ color: "var(--sage)" }}>occasional
+              and <em style={{ color: "var(--sage)" }}>computer science
               <br />
-              teacher</em>.
+              student</em>.
             </h1>
             <p
               className="rise"
               style={{ fontSize: 18.5, lineHeight: 1.55, maxWidth: "56ch", margin: "0 0 16px", color: "rgba(47,58,47,.82)" }}
             >
-              Fourth year computer science at Dalhousie. I like problems where somebody is waiting on the answer: an
-              accessibility office drowning in exam PDFs, a glacier that will not hold still, a first year whose
-              flexbox refuses to behave.
+              I&apos;m a fourth year Computer Science student at Dalhousie University. I build web and cloud
+              applications, do machine learning research, and mentor and teach other students.
             </p>
             <p
               className="rise"
               style={{ fontSize: 15.5, lineHeight: 1.65, maxWidth: "56ch", margin: "0 0 28px", color: "rgba(47,58,47,.62)" }}
             >
-              Twelve roles so far, most of them overlapping. Grouped by the kind of work rather than the calendar, with
-              the full history of the places I stayed long enough to change titles.
+              You can browse my experience by type of work, or take a look at my projects and certifications.
             </p>
             <div className="rise flex gap-3 items-center flex-wrap">
               <Link href="/experience" className="btnx btn-s">
-                Start with the experience
+                View my experience
               </Link>
               <a className="btnx btn-o" href="#resume">
                 Résumé, PDF
@@ -57,9 +55,9 @@ export default function HomePage() {
       <div className="w-full" style={{ borderBottom: "2px solid var(--rule)" }}>
         <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-4">
           {[
-            { n: "03", label: "Development", detail: "ImmediaC, Computing Councils of Canada, Dal Accessibility Centre" },
-            { n: "02", label: "Research", detail: "Glacier melt segmentation, fMRI biomarkers in SCA7" },
-            { n: "05", label: "Community", detail: "Two societies, one faculty, three promotions" },
+            { n: "04", label: "Development", detail: "Quest Software, ImmediaC, Computing Councils of Canada, Dalhousie Student Accessibility Centre" },
+            { n: "02", label: "Research", detail: "Glacier melt research, fMRI analysis for SCA7" },
+            { n: "05", label: "Community", detail: "Dalhousie Machine Learning Society, Women in Tech Society, Faculty of Computer Science" },
             { n: "04", label: "Teaching and support", detail: "SuperNOVA camps, web development labs, exam invigilation" },
           ].map((s, i) => {
             const borderClasses = [
@@ -92,7 +90,7 @@ export default function HomePage() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-11 py-12">
           <div className="flex items-baseline justify-between gap-5 flex-wrap mb-6">
             <h2 className="ser text-4xl" style={{ margin: 0 }}>
-              Three I would show you first
+              Featured projects
             </h2>
             <Link href="/projects" className="btnx btn-o">
               All ten projects
@@ -149,15 +147,15 @@ export default function HomePage() {
               A short version
             </h2>
             <p style={{ fontSize: 15.5, lineHeight: 1.65, color: "rgba(47,58,47,.78)", margin: "0 0 14px" }}>
-              I started in web development labs, teaching other students to debug their own CSS, and it set the
-              pattern for everything since: build the thing, then make sure somebody can use it. At ImmediaC that
-              meant a cloud ERP platform in React and .NET with OpenAI powered workflow automation. At the
-              Accessibility Centre it meant a Java tool that saved a team their exam season.
+              I&apos;m a software developer with experience in full stack and cloud applications. At Quest Software I
+              work on backend services using C# and .NET on Azure. At ImmediaC I worked on an ERP platform built
+              with React and .NET, including AI features using the OpenAI API. At Dalhousie&apos;s Student
+              Accessibility Centre I built a Java tool that automates exam scheduling.
             </p>
             <p style={{ fontSize: 15.5, lineHeight: 1.65, color: "rgba(47,58,47,.78)", margin: 0 }}>
-              The research pulls in the other direction, which I like. Satellite imagery of Greenland, ten years of
-              it, segmented frame by frame to see what the ice has done. Before that, fMRI scans and the search for
-              a biomarker.
+              I also do machine learning research at Dalhousie, where I&apos;m studying glacier melt patterns using
+              satellite data. Before that, I analyzed fMRI data through the Dalhousie Machine Learning Society to
+              look for biomarkers in SCA7 patients.
             </p>
           </div>
           <div className="px-4 sm:px-11 py-11">
@@ -185,7 +183,7 @@ export default function HomePage() {
               </div>
             ))}
             <Link href="/certifications" className="btnx btn-o" style={{ marginTop: 18 }}>
-              Verify any of these
+              View all certifications
             </Link>
           </div>
         </div>

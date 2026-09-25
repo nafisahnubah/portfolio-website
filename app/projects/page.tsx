@@ -73,11 +73,10 @@ export default function ProjectsPage() {
               Ten projects, 2024 to 2025
             </div>
             <h1 className="ser text-5xl sm:text-6xl" style={{ lineHeight: 1, margin: "0 0 18px" }}>
-              Things I built
+              Projects
             </h1>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: 0 }}>
-              Three that I would talk through in an interview, then the rest of the shelf. Screenshots are black and
-              white until you hover them.
+              A few of my main projects, followed by the rest. Screenshots are in grayscale until you hover over them.
             </p>
           </div>
         </div>
@@ -120,7 +119,7 @@ export default function ProjectsPage() {
             </h2>
             <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: "0 0 14px" }}>
               Exam roster PDFs in, grouped summaries out. Built with one other developer for Dalhousie&apos;s Student
-              Accessibility Centre, packaged as a Windows executable so nobody needed a terminal.
+              Accessibility Centre, packaged as a Windows executable.
             </p>
             <div className="flex flex-wrap gap-1.5" style={{ marginBottom: 16 }}>
               {["Java", "Swing GUI", "Apache PDFBox", "Launch4j"].map((t) => (
@@ -156,9 +155,9 @@ export default function ProjectsPage() {
               color-contrast-checker2
             </h2>
             <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: "0 0 14px" }}>
-              A small library that answers one question well: do these two colours pass WCAG. Relative luminance,
-              contrast ratios, AA, AAA and both large text variants, across hex, rgb, hsl, hsv, named and integer
-              inputs.
+              A lightweight npm package that checks whether two colors meet WCAG contrast guidelines at the AA and AAA
+              levels, including the large text variants. It supports hex, rgb, hsl, hsv, named and integer color
+              formats.
             </p>
             <div className="flex flex-wrap gap-1.5" style={{ marginBottom: 16 }}>
               {["JavaScript", "WCAG", "Accessibility", "npm"].map((t) => (
@@ -176,9 +175,9 @@ export default function ProjectsPage() {
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-11 py-11">
         <h2 className="ser text-3xl" style={{ margin: "0 0 6px" }}>
-          The rest of the shelf
+          More projects
         </h2>
-        <p style={{ fontSize: 14.5, color: "rgba(47,58,47,.6)", margin: "0 0 22px" }}>Seven more. Click one to open it.</p>
+        <p style={{ fontSize: 14.5, color: "rgba(47,58,47,.6)", margin: "0 0 22px" }}>Click a project to see more.</p>
 
         <Shelf
           first
@@ -243,18 +242,18 @@ export default function ProjectsPage() {
           year="2024"
           img="/simple-board-game-ui.png"
           alt="Board game simulation"
-          desc="Four piece types, each with its own movement rules, on a command driven board. Written to get object oriented design and command parsing right."
+          desc="Four piece types, each with its own movement rules, on a command driven board. Built to practice object oriented design and command parsing."
           tags={["Java", "OOP", "CLI"]}
           links={[{ label: "Code", href: "https://github.com/nafisahnubah/simple-board-game" }]}
         />
         <Shelf
           last
           title="This portfolio"
-          subtitle="Next.js, redesigned 2026"
+          subtitle="Personal portfolio site"
           year="2025"
           img="/portfolio.png"
           alt="Portfolio site"
-          desc="The site you are reading. Next.js and Tailwind, rebuilt in 2026 around a ruled editorial grid, keyboard reachable disclosure rows and a cursor reactive hero."
+          desc="My personal portfolio website, built with Next.js and Tailwind CSS to show my experience, projects, certifications and academic background."
           tags={["Next.js", "Tailwind CSS", "Accessibility"]}
           links={[{ label: "Code", href: "https://github.com/nafisahnubah/portfolio-website" }]}
         />

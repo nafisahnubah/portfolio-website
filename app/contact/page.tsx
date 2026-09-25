@@ -41,11 +41,11 @@ export default function ContactPage() {
               Halifax, Nova Scotia
             </div>
             <h1 className="ser text-5xl sm:text-6xl" style={{ lineHeight: 1, margin: "0 0 18px" }}>
-              Say hello
+              Get in touch
             </h1>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: 0 }}>
-              If something here is useful to your team, or you just want to talk about glaciers, write to me. I
-              answer everything.
+              If you&apos;d like to talk about a role, a project, or anything else, send me a message and I&apos;ll get back
+              to you soon.
             </p>
           </div>
         </div>
@@ -59,10 +59,10 @@ export default function ContactPage() {
                 Sent
               </div>
               <p className="ser" style={{ fontSize: 28, margin: "0 0 8px" }}>
-                Thanks, message on its way.
+                Thanks for reaching out!
               </p>
               <p style={{ fontSize: 14.5, color: "rgba(47,58,47,.7)", margin: 0 }}>
-                I&apos;ll get back to you as soon as I can.
+                I&apos;ll get back to you soon.
               </p>
             </div>
           ) : (
@@ -93,9 +93,6 @@ export default function ContactPage() {
               <button type="submit" className="btnx btn-s" disabled={isSubmitting}>
                 {isSubmitting ? "Sending…" : "Send message"}
               </button>
-              <p style={{ fontSize: 12.5, color: "rgba(47,58,47,.55)", margin: "14px 0 0" }}>
-                Posts to Formspree, same endpoint as the current site.
-              </p>
             </form>
           )}
         </div>

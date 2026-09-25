@@ -133,20 +133,34 @@ export default function ExperiencePage() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-11 pt-14 pb-10">
           <div className="max-w-[820px]">
             <div className="kick" style={{ marginBottom: 14 }}>
-              Twelve roles, 2024 to present
+              2024 to present
             </div>
             <h1 className="ser text-5xl sm:text-6xl" style={{ lineHeight: 1, margin: "0 0 18px" }}>
-              The work, in four stacks
+              Experience
             </h1>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: 0 }}>
-              Grouped by the kind of work rather than the calendar. Where I held more than one title at the same place,
-              the whole progression is there. Click any role to open it.
+              My work and leadership experience, grouped by type. Where I&apos;ve held more than one role at the same
+              place, they&apos;re listed together. Click any role to see more details.
             </p>
           </div>
         </div>
       </div>
 
       <Stack n="01" label="Software development">
+        <OrgRow org="Quest Software" location="Remote · current">
+          <Role
+            title="Software Developer"
+            date="current"
+            current
+            desc="Backend development on the On Demand Audit team, part of a cloud based software as a service product."
+            bullets={[
+              "Develop backend software using C# and .NET",
+              "Work with Microsoft Azure, including Azure Functions, in a microservice architecture",
+              "Work in an Agile/Scrum team, contributing to development and to unit and integration testing",
+            ]}
+            tags={["C#", ".NET", "Azure", "Azure Functions", "Agile Scrum"]}
+          />
+        </OrgRow>
         <OrgRow org="ImmediaC" location="Halifax, NS · 2026">
           <Role
             title="Application Developer"
@@ -167,7 +181,7 @@ export default function ExperiencePage() {
             title="Software Developer"
             date="current"
             current
-            desc="Organisation website, internal dashboard, and the agentic AI that keeps the busywork off people's desks."
+            desc="Organisation website, internal dashboard, and AI tools that automate internal processes."
             bullets={[
               "Building the website and internal dashboard in Next.js and Node.js",
               "Wiring front end and back end into one scalable system",
@@ -239,7 +253,19 @@ export default function ExperiencePage() {
       </Stack>
 
       <Stack n="03" label="Community and leadership">
-        <OrgRow org="Dalhousie Machine Learning Society" location="Halifax, NS · 2024 to current" note="Promoted once" timelined>
+        <OrgRow org="Dalhousie Machine Learning Society" location="Halifax, NS · 2024 to current" note="Promoted twice" timelined>
+          <Role
+            title="Secretary"
+            date="current"
+            current
+            dotColor="var(--copper)"
+            timelined
+            bullets={[
+              "Help run the society's day to day operations and planning",
+              "Support the executive team with events and workshops",
+            ]}
+            tags={["Leadership", "Organization"]}
+          />
           <Role
             title="Events and Media Lead"
             date="current"
@@ -274,9 +300,10 @@ export default function ExperiencePage() {
             dotColor="var(--copper)"
             timelined
             bullets={[
-              "Host and coordinate events for women and non binary students in tech",
-              "Mentor students and keep the community a welcoming one",
-              "Run society operations and organisational planning",
+              "Led a mentorship program that connects students with industry mentors",
+              "Host networking and tech events for women and non binary students in tech",
+              "Mentor women and non binary students, and received the Helping Hands award for mentorship",
+              "Help run society operations and planning",
             ]}
             tags={["Leadership", "Mentorship", "Event coordination"]}
           />
@@ -345,7 +372,7 @@ export default function ExperiencePage() {
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-11 py-11 flex items-center justify-between gap-6 flex-wrap">
         <p className="ser text-2xl sm:text-3xl" style={{ margin: 0, maxWidth: "30ch" }}>
-          Next: the ten things I built along the way.
+          Next: take a look at my projects.
         </p>
         <Link href="/projects" className="btnx btn-s">
           Projects

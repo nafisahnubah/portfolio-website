@@ -28,7 +28,7 @@ export default function HomePage() {
               className="rise"
               style={{ fontSize: 18.5, lineHeight: 1.55, maxWidth: "56ch", margin: "0 0 16px", color: "rgba(47,58,47,.82)" }}
             >
-              I&apos;m a fourth year Computer Science student at Dalhousie University. I build web and cloud
+              I&apos;m a fourth year Computer Science Honours student at Dalhousie University. I build web and cloud
               applications, do machine learning research, and mentor and teach other students.
             </p>
             <p

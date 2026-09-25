@@ -299,7 +299,7 @@ export default function ExperiencePage() {
             dotColor="var(--copper)"
             timelined
             bullets={[
-              "Led a mentorship program that connects students with industry mentors",
+              "Led a mentorship program that connects students with industry and peer mentors",
               "Host networking and tech events for women and non binary students in tech",
               "Mentor women and non binary students, and received the Helping Hands award for mentorship",
               "Help run society operations and planning",

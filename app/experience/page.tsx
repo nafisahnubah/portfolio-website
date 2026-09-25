@@ -223,7 +223,7 @@ export default function ExperiencePage() {
       <Stack n="02" label="Machine learning research">
         <OrgRow org="Dalhousie University" location="Halifax, NS · current">
           <Role
-            title="Undergraduate Machine Learning Researcher"
+            title="Undergraduate Machine Learning Researcher, MAPS Lab"
             date="current"
             current
             desc="Glacier melt patterns, under faculty supervision, from geospatial and satellite data."
@@ -236,14 +236,14 @@ export default function ExperiencePage() {
             tags={["Machine learning", "Google Earth Engine", "Image segmentation", "Python"]}
           />
           <Role
-            title="Honours Thesis Researcher"
+            title="Honours Thesis Researcher, MYTech Lab"
             date="current"
             current
             desc="Honours thesis on detecting rare attack types in network intrusion detection, where some attack classes have very few examples to learn from."
             bullets={[
               "Studying how to improve SMOTE, a method that creates synthetic samples of rare classes, by choosing which samples to pair using a learned embedding",
               "Proposing EG-SMOTE, which trains a contrastive encoder to pick the pairs while still building samples from the original features",
-              "Planning to compare it against SMOTE, Borderline-SMOTE and ADASYN on the UNSW-NB15 and NSL-KDD datasets",
+              "Comparing it against modern SMOTE variants on the UNSW-NB15 and NSL-KDD datasets",
             ]}
             tags={["Machine learning", "Network intrusion detection", "Contrastive learning", "Python", "PyTorch"]}
           />

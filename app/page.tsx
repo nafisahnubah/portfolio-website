@@ -56,7 +56,7 @@ export default function HomePage() {
         <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-4">
           {[
             { n: "04", label: "Development", detail: "Quest Software Inc., ImmediaC, Computing Councils of Canada, Dalhousie Student Accessibility Centre" },
-            { n: "02", label: "Research", detail: "Honours thesis on network intrusion detection, glacier melt research, fMRI analysis for SCA7" },
+            { n: "03", label: "Research", detail: "Honours thesis on network intrusion detection, glacier melt research, fMRI analysis for SCA7" },
             { n: "05", label: "Community", detail: "Dalhousie Machine Learning Society, Women in Tech Society, Faculty of Computer Science" },
             { n: "04", label: "Teaching and support", detail: "SuperNOVA camps, web development labs, peer mentorship, exam invigilation" },
           ].map((s, i) => {

@@ -13,8 +13,8 @@ function Shelf({
   title: string
   subtitle: string
   year: string
-  img: string
-  alt: string
+  img?: string
+  alt?: string
   desc: string
   tags: string[]
   links: { label: string; href: string; primary?: boolean }[]
@@ -37,10 +37,12 @@ function Shelf({
         </span>
       </summary>
       <div
-        className="panel grid grid-cols-1 sm:grid-cols-[280px_1fr] gap-4 sm:gap-6 pl-4 sm:pl-[38px]"
+        className={`panel grid grid-cols-1 ${img ? "sm:grid-cols-[280px_1fr]" : ""} gap-4 sm:gap-6 pl-4 sm:pl-[38px]`}
         style={{ paddingTop: 6, paddingRight: 12, paddingBottom: 22 }}
       >
-        <img className="shot" src={img} alt={alt} style={{ width: "100%", aspectRatio: "4 / 3", objectFit: "cover" }} />
+        {img && (
+          <img className="shot" src={img} alt={alt} style={{ width: "100%", aspectRatio: "4 / 3", objectFit: "cover" }} />
+        )}
         <div>
           <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: "0 0 12px" }}>{desc}</p>
           <div className="flex flex-wrap gap-1.5" style={{ marginBottom: 14 }}>
@@ -70,7 +72,7 @@ export default function ProjectsPage() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-11 pt-14 pb-10">
           <div className="max-w-[820px]">
             <div className="kick" style={{ marginBottom: 14 }}>
-              Ten projects, 2024 to 2025
+              Thirteen projects, 2024 to 2026
             </div>
             <h1 className="ser text-5xl sm:text-6xl" style={{ lineHeight: 1, margin: "0 0 18px" }}>
               Projects
@@ -181,6 +183,30 @@ export default function ProjectsPage() {
 
         <Shelf
           first
+          title="Canso Launch Windows"
+          subtitle="Launch window decision engine"
+          year="2026"
+          desc="Built for the Mission Accepted Space Hackathon, hosted by MDA Space, the Canadian Space Agency and ShiftKey Labs. It figures out when a rocket could actually launch from Spaceport Nova Scotia: checking whether a launch can reach the target orbit, screening out unsafe windows, and estimating the odds that each window's weather will allow a launch. It's checked against real launches from other spaceports, landing within a few minutes of their recorded liftoff times."
+          tags={["Python", "FastAPI", "Orbital mechanics", "Data visualization"]}
+          links={[{ label: "Code", href: "https://github.com/nafisahnubah/MDA_Mission_Accepted_Hackathon" }]}
+        />
+        <Shelf
+          title="SPECTRA-ICA"
+          subtitle="EEG artifact removal algorithm"
+          year="2026"
+          desc="Built for SURGE NeuroHack 2026, where it won first place in the Machine Learning category. SPECTRA-ICA is an EEG artifact removal algorithm that removes only the specific frequencies and time windows where an artifact like a blink or muscle movement happens, instead of removing an entire signal component. It outperformed standard ICA cleaning on all seven evaluation metrics in a benchmark test."
+          tags={["Python", "EEG", "Signal processing", "Machine learning"]}
+          links={[{ label: "Code", href: "https://github.com/RafatH0ssain/SPECTRAICA-Surge-NeuroHack-2026" }]}
+        />
+        <Shelf
+          title="TrajOT"
+          subtitle="fMRI brain alignment model"
+          year="2026"
+          desc="Built with a team of six for SURGE Neurohack Fall 2026. TrajOT is a statistical model for aligning resting-state fMRI scans across different people, which normally have no shared timeline to align by. It estimates how confident it is in each subject's alignment and relies less on the subjects the data doesn't support, which improved alignment reliability over existing methods on real fMRI data."
+          tags={["Python", "PyTorch", "fMRI", "Statistical modeling"]}
+          links={[{ label: "Code", href: "https://github.com/HetJivani04/SURGE-Neurohack-DMLS-Fall-2026" }]}
+        />
+        <Shelf
           title="RateEase"
           subtitle="Full stack review platform"
           year="2024"

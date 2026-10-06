@@ -93,7 +93,7 @@ export default function HomePage() {
               Featured projects
             </h2>
             <Link href="/projects" className="btnx btn-o">
-              All ten projects
+              All projects
             </Link>
           </div>
           <div className="grid sm:grid-cols-3 gap-6">

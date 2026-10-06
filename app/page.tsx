@@ -99,6 +99,11 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-3 gap-6">
             {[
               {
+                meta: "2026 · Hackathon",
+                title: "Canso Launch Windows",
+                desc: "A launch window decision engine for Spaceport Nova Scotia, built for the Mission Accepted Space Hackathon.",
+              },
+              {
                 img: "/modern-web-dashboard-for-ai-debugging-tool.png",
                 alt: "DEEBug dashboard",
                 meta: "2025 · Team of five",
@@ -112,21 +117,32 @@ export default function HomePage() {
                 title: "Normalized Entity Parser",
                 desc: "Turns SARS exam roster PDFs into readable summaries for Dalhousie's Student Accessibility Centre.",
               },
-              {
-                img: "/color-contrast-accessibility-tool.png",
-                alt: "color-contrast-checker2",
-                meta: "2025 · Published on npm",
-                title: "color-contrast-checker2",
-                desc: "WCAG contrast checking across hex, rgb, hsl, hsv, named and integer colour formats.",
-              },
             ].map((p) => (
               <Link href="/projects" key={p.title}>
-                <img
-                  className="shot"
-                  src={p.img}
-                  alt={p.alt}
-                  style={{ width: "100%", aspectRatio: "4 / 3", objectFit: "cover" }}
-                />
+                {p.img ? (
+                  <img
+                    className="shot"
+                    src={p.img}
+                    alt={p.alt}
+                    style={{ width: "100%", aspectRatio: "4 / 3", objectFit: "cover" }}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      width: "100%",
+                      aspectRatio: "4 / 3",
+                      background: "var(--surf)",
+                      border: "1px solid var(--hair)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <span className="ser" style={{ fontSize: 22, color: "rgba(47,58,47,.4)" }}>
+                      {p.title}
+                    </span>
+                  </div>
+                )}
                 <div className="kick" style={{ marginTop: 12 }}>
                   {p.meta}
                 </div>

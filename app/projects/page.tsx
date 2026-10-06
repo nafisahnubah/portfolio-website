@@ -85,6 +85,34 @@ export default function ProjectsPage() {
       </div>
 
       <div className="w-full" style={{ borderBottom: "2px solid var(--rule)" }}>
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-11 py-11">
+          <div className="max-w-[760px]">
+          <div className="kick">2026 · Hackathon</div>
+          <h2 className="ser" style={{ fontSize: 44, margin: "8px 0 12px" }}>
+            Canso Launch Windows
+          </h2>
+          <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: "0 0 14px" }}>
+            Built for the Mission Accepted Space Hackathon, hosted by MDA Space, the Canadian Space Agency and
+            ShiftKey Labs. It figures out when a rocket could actually launch from Spaceport Nova Scotia: checking
+            whether a launch can reach the target orbit, screening out unsafe windows, and estimating the odds that
+            each window&apos;s weather will allow a launch. It&apos;s checked against real launches from other
+            spaceports, landing within a few minutes of their recorded liftoff times.
+          </p>
+          <div className="flex flex-wrap gap-1.5" style={{ marginBottom: 16 }}>
+            {["Python", "FastAPI", "Orbital mechanics", "Data visualization"].map((t) => (
+              <span key={t} className="tagx">
+                {t}
+              </span>
+            ))}
+          </div>
+          <a className="btnx btn-o" href="https://github.com/nafisahnubah/MDA_Mission_Accepted_Hackathon" target="_blank" rel="noopener">
+            Source on GitHub
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full" style={{ borderBottom: "2px solid var(--rule)" }}>
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1.25fr_1fr] gap-8 px-4 sm:px-11 py-11 items-center">
           <img
             className="shot"
@@ -143,38 +171,6 @@ export default function ProjectsPage() {
         </div>
       </div>
 
-      <div className="w-full" style={{ borderBottom: "2px solid var(--rule)" }}>
-        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1.25fr_1fr] gap-8 px-4 sm:px-11 py-11 items-center">
-          <img
-            className="shot"
-            src="/color-contrast-accessibility-tool.png"
-            alt="color-contrast-checker2"
-            style={{ width: "100%", aspectRatio: "16 / 10", objectFit: "cover" }}
-          />
-          <div>
-            <div className="kick">2025 · Published on npm</div>
-            <h2 className="ser" style={{ fontSize: 44, margin: "8px 0 12px" }}>
-              color-contrast-checker2
-            </h2>
-            <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(47,58,47,.78)", margin: "0 0 14px" }}>
-              A lightweight npm package that checks whether two colors meet WCAG contrast guidelines at the AA and AAA
-              levels, including the large text variants. It supports hex, rgb, hsl, hsv, named and integer color
-              formats.
-            </p>
-            <div className="flex flex-wrap gap-1.5" style={{ marginBottom: 16 }}>
-              {["JavaScript", "WCAG", "Accessibility", "npm"].map((t) => (
-                <span key={t} className="tagx">
-                  {t}
-                </span>
-              ))}
-            </div>
-            <a className="btnx btn-o" href="https://www.npmjs.com/package/color-contrast-checker2" target="_blank" rel="noopener">
-              View on npm
-            </a>
-          </div>
-        </div>
-      </div>
-
       <div className="max-w-[1400px] mx-auto px-4 sm:px-11 py-11">
         <h2 className="ser text-3xl" style={{ margin: "0 0 6px" }}>
           More projects
@@ -183,14 +179,6 @@ export default function ProjectsPage() {
 
         <Shelf
           first
-          title="Canso Launch Windows"
-          subtitle="Launch window decision engine"
-          year="2026"
-          desc="Built for the Mission Accepted Space Hackathon, hosted by MDA Space, the Canadian Space Agency and ShiftKey Labs. It figures out when a rocket could actually launch from Spaceport Nova Scotia: checking whether a launch can reach the target orbit, screening out unsafe windows, and estimating the odds that each window's weather will allow a launch. It's checked against real launches from other spaceports, landing within a few minutes of their recorded liftoff times."
-          tags={["Python", "FastAPI", "Orbital mechanics", "Data visualization"]}
-          links={[{ label: "Code", href: "https://github.com/nafisahnubah/MDA_Mission_Accepted_Hackathon" }]}
-        />
-        <Shelf
           title="SPECTRA-ICA"
           subtitle="EEG artifact removal algorithm"
           year="2026"
@@ -271,6 +259,16 @@ export default function ProjectsPage() {
           desc="Four piece types, each with its own movement rules, on a command driven board. Built to practice object oriented design and command parsing."
           tags={["Java", "OOP", "CLI"]}
           links={[{ label: "Code", href: "https://github.com/nafisahnubah/simple-board-game" }]}
+        />
+        <Shelf
+          title="color-contrast-checker2"
+          subtitle="WCAG color contrast npm package"
+          year="2025"
+          img="/color-contrast-accessibility-tool.png"
+          alt="color-contrast-checker2"
+          desc="A lightweight npm package that checks whether two colors meet WCAG contrast guidelines at the AA and AAA levels, including the large text variants. It supports hex, rgb, hsl, hsv, named and integer color formats."
+          tags={["JavaScript", "WCAG", "Accessibility", "npm"]}
+          links={[{ label: "View on npm", href: "https://www.npmjs.com/package/color-contrast-checker2" }]}
         />
         <Shelf
           last

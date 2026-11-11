@@ -1,32 +1,34 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Archivo, Instrument_Serif } from "next/font/google"
+import { Newsreader, Caveat, Instrument_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import { Navigation } from "@/components/navigation"
-import { Suspense } from "react"
 import "./globals.css"
-import { Footer } from "@/components/footer"
 
-const archivo = Archivo({
+const serif = Newsreader({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-archivo",
-  weight: ["400", "500", "600", "800"],
+  variable: "--f-serif",
+  style: ["normal", "italic"],
+  axes: ["opsz"],
 })
 
-const instrumentSerif = Instrument_Serif({
+const hand = Caveat({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-instrument-serif",
-  weight: ["400"],
-  style: ["normal", "italic"],
+  variable: "--f-hand",
+  weight: ["500", "700"],
+})
+
+const sans = Instrument_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--f-sans",
 })
 
 export const metadata: Metadata = {
   title: "Nafisah Nubah, Software developer, ML researcher",
   description:
     "Portfolio of Nafisah Nubah, fourth year computer science student at Dalhousie University. Software development, machine learning research, and teaching.",
-  generator: "v0.app",
   icons: {
     icon: "/favicon.ico",
   },
@@ -38,13 +40,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${archivo.variable} ${instrumentSerif.variable} antialiased`}>
-        <Suspense fallback={null}>
-          <Navigation />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </Suspense>
+    <html
+      lang="en"
+      className={`${serif.variable} ${hand.variable} ${sans.variable}`}
+      data-scroll-behavior="smooth"
+    >
+      <body>
+        {children}
         <Analytics />
       </body>
     </html>

@@ -1,268 +1,341 @@
-import Link from "next/link"
-import { HeroCanvas } from "@/components/hero-canvas"
+import type React from "react"
+import {
+  profile,
+  development,
+  research,
+  community,
+  teaching,
+  education,
+  projectsSection,
+  featured,
+  featuredNote,
+  moreProjects,
+  certifications,
+  contact,
+  menu,
+  type Entry,
+  type Note,
+  type Section,
+} from "@/lib/content"
+import { Enhance } from "@/components/enhance"
+import { ContactForm } from "@/components/contact-form"
+
+const ext = (href: string) => (href.startsWith("http") ? { target: "_blank", rel: "noopener" } : {})
+
+function MarginNote({ note }: { note: Note }) {
+  return (
+    <span
+      className={`nt ${note.side} ${note.color}${note.nowrap ? " wide" : ""}`}
+      style={{ "--y": note.y, "--rot": note.rot } as React.CSSProperties}
+      aria-hidden="true"
+    >
+      <i className="ar" data-ar={note.side === "r" ? "l" : "r"} />
+      <span className="nw">
+        {note.doodle && <i className="mtn" data-doodle={note.doodle} />}
+        {note.lines.map((l, i) => (
+          <span key={i}>
+            {i > 0 && <br />}
+            {l}
+          </span>
+        ))}
+      </span>
+    </span>
+  )
+}
+
+function hasDetails(e: Entry) {
+  return Boolean(e.meta || e.desc || e.bullets?.length || e.tags?.length || e.credId || e.links?.length || e.img)
+}
+
+function Details({ e }: { e: Entry }) {
+  const text = (
+    <div className="xtx">
+      {e.meta && <p className="xm">{e.meta}</p>}
+      {e.desc && <p className="xd">{e.desc}</p>}
+      {e.bullets && e.bullets.length > 0 && (
+        <ul className="xl">
+          {e.bullets.map((b) => (
+            <li key={b}>{b}</li>
+          ))}
+        </ul>
+      )}
+      {e.tags && e.tags.length > 0 && <p className="xt">{e.tags.join(" · ")}</p>}
+      {e.credId && <p className="xm">Credential ID {e.credId}</p>}
+      {e.links && e.links.length > 0 && (
+        <p className="xk">
+          {e.links.map((l) => (
+            <a key={l.label} href={l.href} {...ext(l.href)}>
+              {l.label} <span aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </p>
+      )}
+    </div>
+  )
+  return (
+    <div className="xp" id={`xp-${e.id}`} data-xp>
+      <div className="xpi">
+        <div className={`xpc${e.img ? " wimg" : ""}`}>
+          {e.img && (
+            <span className="xim">
+              <img src={e.img} alt={e.alt ?? ""} loading="lazy" />
+            </span>
+          )}
+          {text}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function EntryRow({ e, cert }: { e: Entry; cert?: boolean }) {
+  const expandable = hasDetails(e)
+  return (
+    <div className={`ent${cert ? " cert" : ""}`}>
+      <div className="eh">
+        {e.href ? (
+          <a href={e.href} {...ext(e.href)}>
+            <b>{e.title}</b> <span className="lk" aria-hidden="true">↗</span>
+          </a>
+        ) : (
+          <b>{e.title}</b>
+        )}
+        <span className="eo">{e.org}</span>
+        <span className="ea">
+          <span className="ed">{e.date}</span>
+          {expandable && (
+            <button type="button" className="xb" data-xb aria-expanded="false" aria-controls={`xp-${e.id}`}>
+              details +
+            </button>
+          )}
+        </span>
+      </div>
+      {e.short && <p>{e.short}</p>}
+      {expandable && <Details e={e} />}
+      {e.note && <MarginNote note={e.note} />}
+    </div>
+  )
+}
+
+function ExperienceSection({ s }: { s: Section }) {
+  return (
+    <section className={`blk${s.variant ? " " + s.variant : ""}`} id={s.id}>
+      <h2>{s.title}</h2>
+      {s.entries.map((e) => (
+        <EntryRow key={e.id} e={e} />
+      ))}
+    </section>
+  )
+}
 
 export default function HomePage() {
+  const nameChars = [...profile.name]
+  const tabs = menu.filter((m) => m.tab)
+
   return (
-    <div className="w-full paper" style={{ background: "var(--bg)" }}>
-      <div className="relative overflow-hidden" style={{ borderBottom: "2px solid var(--rule)" }}>
-        <HeroCanvas />
-        <div className="relative max-w-[1400px] mx-auto">
-          <div className="px-4 sm:px-11 pt-16 pb-12 sm:pt-[72px] sm:pb-16 max-w-[860px]">
-            <div
-              className="kick rise flex items-center gap-2.5 mb-4"
-              style={{ color: "var(--sage-deep)" }}
+    <div className="r7c">
+      <header className="bar">
+        <span className="bt">{profile.name}</span>
+        <div className="bc">
+          <div className="mnu" data-mnu>
+            <button
+              type="button"
+              className="burger"
+              data-burger
+              aria-expanded="false"
+              aria-controls="sec-menu"
+              aria-label="Jump to a section"
             >
-              <span style={{ width: 22, height: 2, background: "var(--sage)", flexShrink: 0 }} />
-              <span>Halifax, Nova Scotia · open to 2027 new grad software and ML roles</span>
-            </div>
-            <h1 className="ser rise text-5xl sm:text-7xl lg:text-[84px]" style={{ lineHeight: 0.97, margin: "0 0 22px" }}>
-              Hi, I&apos;m Nafisah,
-              <br />
-              a software developer
-              <br />
-              and <em style={{ color: "var(--sage)" }}>computer science
-              <br />
-              student</em>.
-            </h1>
-            <p
-              className="rise"
-              style={{ fontSize: 18.5, lineHeight: 1.55, maxWidth: "56ch", margin: "0 0 16px", color: "rgba(47,58,47,.82)" }}
-            >
-              I&apos;m a fourth year Computer Science Honours student at Dalhousie University. I build web and cloud
-              applications, do machine learning research, and mentor and teach other students.
-            </p>
-            <p
-              className="rise"
-              style={{ fontSize: 15.5, lineHeight: 1.65, maxWidth: "56ch", margin: "0 0 28px", color: "rgba(47,58,47,.62)" }}
-            >
-              You can browse my experience by type of work, or take a look at my projects and certifications.
-            </p>
-            <div className="rise flex gap-3 items-center flex-wrap">
-              <Link href="/experience" className="btnx btn-s">
-                View my experience
-              </Link>
-              <a className="btnx btn-o" href="#resume">
-                Résumé, PDF
-              </a>
-            </div>
-            <div className="rise" style={{ marginTop: 14, fontSize: 12.5, color: "rgba(47,58,47,.5)" }}>
-              Move your cursor over this panel.
+              <i />
+              <i />
+              <i />
+            </button>
+            <div className="drop" id="sec-menu" data-drop>
+              <p className="dh">Jump to</p>
+              <ul>
+                {menu.map((m, k) => (
+                  <li key={m.id} style={{ "--k": k } as React.CSSProperties}>
+                    <a href={`#${m.id}`} data-go={m.id}>
+                      <span className="mn">{String(k + 1).padStart(2, "0")}</span>
+                      {m.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      <div className="w-full" style={{ borderBottom: "2px solid var(--rule)" }}>
-        <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-4">
-          {[
-            { n: "04", label: "Development", detail: "Quest Software Inc., ImmediaC, Computing Councils of Canada, Dalhousie Student Accessibility Centre" },
-            { n: "03", label: "Research", detail: "Honours thesis on network intrusion detection, glacier melt research, fMRI analysis for SCA7" },
-            { n: "05", label: "Community", detail: "Dalhousie Machine Learning Society, Women in Tech Society, Faculty of Computer Science" },
-            { n: "04", label: "Teaching and support", detail: "SuperNOVA camps, web development labs, peer mentorship, exam invigilation" },
-          ].map((s, i) => {
-            const borderClasses = [
-              "border-r border-b sm:border-b-0",
-              "border-b sm:border-b-0 sm:border-r",
-              "border-r",
-              "",
-            ][i]
-            return (
-              <Link
-                key={s.label}
-                href="/experience"
-                className={`row text-left border-[var(--hair)] p-[22px] sm:p-[26px_22px] ${borderClasses}`}
-                style={{ color: "inherit" }}
-              >
-                <div className="ser" style={{ fontSize: 44, lineHeight: 1 }}>
-                  {s.n}
-                </div>
-                <div className="kick" style={{ marginTop: 6 }}>
-                  {s.label}
-                </div>
-                <div style={{ fontSize: 13.5, color: "rgba(47,58,47,.65)", marginTop: 8 }}>{s.detail}</div>
-              </Link>
-            )
-          })}
-        </div>
-      </div>
+      <nav className="tabs" aria-label="Sections">
+        {tabs.map((t, i) => (
+          <a
+            key={t.id}
+            href={`#${t.id}`}
+            className="tab"
+            style={{ "--tc": t.color, "--ti": i } as React.CSSProperties}
+            data-tab={t.id}
+          >
+            {t.tab}
+          </a>
+        ))}
+      </nav>
 
-      <div className="w-full" style={{ borderBottom: "2px solid var(--rule)" }}>
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-11 py-12">
-          <div className="flex items-baseline justify-between gap-5 flex-wrap mb-6">
-            <h2 className="ser text-4xl" style={{ margin: 0 }}>
-              Featured projects
-            </h2>
-            <Link href="/projects" className="btnx btn-o">
-              All projects
-            </Link>
+      <main className="doc">
+        <div className="pencil" data-pencil aria-hidden="true" />
+
+        <section className="blk top">
+          <h1>
+            <span className="nm" aria-label={profile.name}>
+              {nameChars.map((c, i) => (
+                <span className="lt" key={i} aria-hidden="true">
+                  <span className="li" style={{ "--i": i } as React.CSSProperties}>
+                    {c === " " ? " " : c}
+                  </span>
+                </span>
+              ))}
+            </span>
+            <i className="nsw" data-nsw aria-hidden="true" />
+            <MarginNote note={{ side: "r", color: "cb", y: "6px", rot: "-4deg", lines: ["that's me!", "hi there"] }} />
+          </h1>
+          <p className="role">{profile.role}</p>
+          <p className="ct">
+            {profile.location} · <a href={`mailto:${profile.email}`}>{profile.email}</a> ·{" "}
+            <a href={profile.github} target="_blank" rel="noopener">
+              github.com/nafisahnubah
+            </a>{" "}
+            ·{" "}
+            <a href={profile.linkedin} target="_blank" rel="noopener">
+              LinkedIn
+            </a>
+          </p>
+          <p className="sum">
+            I&apos;m a fourth year Computer Science Honours student at Dalhousie University,{" "}
+            <mark className="hl">open to 2027 new grad software and ML roles</mark>. I develop{" "}
+            <span className="ring">
+              cloud-based software
+              <i className="rs" data-shape="ring" style={{ left: -14, right: -12 }} />
+            </span>{" "}
+            across the full stack, do{" "}
+            <span className="ring">
+              machine learning research
+              <i className="rs" data-shape="under" />
+            </span>
+            , and spend the rest of my time mentoring and community building.
+          </p>
+          <dl className="stats">
+            {profile.stats.map(([k, v]) => (
+              <div key={k}>
+                <dt>{k}</dt>
+                <dd>{v}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        <ExperienceSection s={development} />
+        <ExperienceSection s={research} />
+        <ExperienceSection s={community} />
+        <ExperienceSection s={teaching} />
+
+        <section className="blk card" id={education.id}>
+          <h2>{education.title}</h2>
+          <div className="ent">
+            <div className="eh">
+              <b>{education.degree}</b>
+              <span className="eo">{education.school}</span>
+              <span className="ed">{education.date}</span>
+            </div>
+            <p>
+              CGPA{" "}
+              <span className="ring">
+                {education.cgpa}
+                <i className="rs" data-shape="ring" />
+              </span>{" "}
+              / {education.scale} · {education.standing}
+            </p>
+            <MarginNote note={education.note} />
           </div>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {[
-              {
-                meta: "2026 · Hackathon",
-                title: "Canso Launch Windows",
-                desc: "A launch window decision engine for Spaceport Nova Scotia, built for the Mission Accepted Space Hackathon.",
-              },
-              {
-                img: "/modern-web-dashboard-for-ai-debugging-tool.png",
-                alt: "DEEBug dashboard",
-                meta: "2025 · Team of five",
-                title: "DEEBug",
-                desc: "Finds and explains performance bugs in deep learning models. Flask service, Gemini explanation layer, React front end.",
-              },
-              {
-                img: "/nep.png",
-                alt: "Normalized Entity Parser",
-                meta: "2025 · Still in use",
-                title: "Normalized Entity Parser",
-                desc: "Turns SARS exam roster PDFs into readable summaries for Dalhousie's Student Accessibility Centre.",
-              },
-            ].map((p) => (
-              <Link href="/projects" key={p.title}>
-                {p.img ? (
-                  <img
-                    className="shot"
-                    src={p.img}
-                    alt={p.alt}
-                    style={{ width: "100%", aspectRatio: "4 / 3", objectFit: "cover" }}
-                  />
-                ) : (
-                  <div
-                    style={{
-                      width: "100%",
-                      aspectRatio: "4 / 3",
-                      background: "var(--surf)",
-                      border: "1px solid var(--hair)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <span className="ser" style={{ fontSize: 22, color: "rgba(47,58,47,.4)" }}>
-                      {p.title}
+          <p className="sub2">Awards</p>
+          <ul className="aw">
+            {education.awards.map((a) => (
+              <li key={a}>{a}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="blk" id={projectsSection.id}>
+          <h2>{projectsSection.title}</h2>
+          <div className="feat">
+            {featured.map((p) => {
+              const inner = (
+                <>
+                  <span className={`fi${p.img ? "" : " ph"}`}>
+                    {p.img ? <img src={p.img} alt={p.alt} loading="lazy" /> : <span className="pht">{p.title}</span>}
+                  </span>
+                  <span className="fh">
+                    <span className="ftl">
+                      <b>{p.title}</b> {p.href && <span className="lk" aria-hidden="true">↗</span>}
                     </span>
-                  </div>
-                )}
-                <div className="kick" style={{ marginTop: 12 }}>
-                  {p.meta}
+                    <span className="ed">{p.year}</span>
+                  </span>
+                  <span className="fd">{p.short}</span>
+                  <span className="eo">{p.tech}</span>
+                </>
+              )
+              return p.href ? (
+                <a key={p.title} className="fp" href={p.href} target="_blank" rel="noopener">
+                  {inner}
+                </a>
+              ) : (
+                <div key={p.title} className="fp">
+                  {inner}
                 </div>
-                <h3 className="ser" style={{ fontSize: 26, margin: "6px 0 6px" }}>
-                  {p.title}
-                </h3>
-                <p style={{ fontSize: 14, lineHeight: 1.5, margin: 0, color: "rgba(47,58,47,.75)" }}>{p.desc}</p>
-              </Link>
-            ))}
+              )
+            })}
+            <MarginNote note={featuredNote} />
           </div>
-        </div>
-      </div>
+          <p className="sub2">More projects</p>
+          {moreProjects.map((e) => (
+            <EntryRow key={e.id} e={e} />
+          ))}
+        </section>
 
-      <div className="w-full" style={{ borderBottom: "2px solid var(--rule)" }}>
-        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1.1fr_1fr]">
-          <div className="px-4 sm:px-11 py-11 border-b-2 lg:border-b-0 lg:border-r-2 border-[var(--rule)]">
-            <h2 className="ser text-3xl" style={{ margin: "0 0 6px" }}>
-              A short version
-            </h2>
-            <p style={{ fontSize: 15.5, lineHeight: 1.65, color: "rgba(47,58,47,.78)", margin: "0 0 14px" }}>
-              I&apos;m a software developer with experience in full stack and cloud applications. At Quest Software Inc. I
-              work on backend services using C# and .NET on Azure. At ImmediaC I worked on an ERP platform built
-              with React and .NET, including AI features using the OpenAI API. At Dalhousie&apos;s Student
-              Accessibility Centre I built a Java tool that automates exam scheduling.
-            </p>
-            <p style={{ fontSize: 15.5, lineHeight: 1.65, color: "rgba(47,58,47,.78)", margin: 0 }}>
-              I also do machine learning research at Dalhousie, where I&apos;m studying glacier melt patterns using
-              satellite data and working on my Honours thesis on detecting rare attack types in network intrusion
-              detection. Before that, I analyzed fMRI data through the Dalhousie Machine Learning Society to look for
-              biomarkers in SCA7 patients.
-            </p>
-            <p style={{ fontSize: 15.5, lineHeight: 1.65, color: "rgba(47,58,47,.78)", margin: "14px 0 0" }}>
-              Outside my technical roles, I lead a mentorship program with the Dalhousie Women in Tech Society, host
-              workshops and events with the Dalhousie Machine Learning Society, and help organize events and
-              initiatives on the Faculty of Computer Science Leadership Team.
-            </p>
-          </div>
-          <div className="px-4 sm:px-11 py-11">
-            <div className="kick" style={{ marginBottom: 14 }}>
-              Credentials
-            </div>
-            {[
-              ["AWS Certified Cloud Practitioner", "Amazon Web Services · 2025"],
-              ["Deep Learning Specialization", "DeepLearning.AI · 2026"],
-              ["Practical Cybersecurity", "ShiftKey Labs · 2025"],
-              ["Cloud Foundations", "ShiftKey Labs · 2025"],
-              ["Fundamentals of Cloud Administration with Azure", "ShiftKey Labs · 2025"],
-            ].map(([title, sub], i, arr) => (
-              <div
-                key={title}
-                style={{
-                  fontSize: 15,
-                  padding: i === 0 ? "0 0 10px" : "10px 0",
-                  borderBottom: i < arr.length - 1 ? "1px solid var(--hair)" : undefined,
-                }}
-              >
-                {title}
-                <br />
-                <span style={{ fontSize: 12.5, color: "rgba(47,58,47,.55)" }}>{sub}</span>
-              </div>
-            ))}
-            <Link href="/certifications" className="btnx btn-o" style={{ marginTop: 18 }}>
-              View all certifications
-            </Link>
-          </div>
-        </div>
-      </div>
+        <section className="blk" id={certifications.id}>
+          <h2>{certifications.title}</h2>
+          {certifications.entries.map((e) => (
+            <EntryRow key={e.id} e={e} cert />
+          ))}
+        </section>
 
-      <div className="w-full" style={{ borderBottom: "2px solid var(--rule)" }}>
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-11 py-12">
-          <div className="kick" style={{ marginBottom: 22 }}>
-            Academics and awards
+        <section className="blk" id={contact.id}>
+          <h2>{contact.title}</h2>
+          <p className="cin">
+            {contact.intro}
+            <MarginNote note={contact.note} />
+          </p>
+          <div className="two cgrid">
+            <ContactForm action={contact.formAction} />
+            <dl className="ways">
+              {contact.other.map((o) => (
+                <div key={o.label}>
+                  <dt>{o.label}</dt>
+                  {o.items.map((it) => (
+                    <dd key={it.text}>{it.href ? <a href={it.href} {...ext(it.href)}>{it.text}</a> : it.text}</dd>
+                  ))}
+                </div>
+              ))}
+            </dl>
           </div>
-          <div className="grid sm:grid-cols-3 gap-7 items-start">
-            <div>
-              <div className="ser" style={{ fontSize: 44, lineHeight: 1 }}>
-                4.22<span style={{ fontSize: 22, color: "rgba(47,58,47,.5)" }}>/4.30</span>
-              </div>
-              <div className="kick" style={{ marginTop: 8 }}>
-                CGPA, Dalhousie
-              </div>
-            </div>
-            <div>
-              <div className="ser" style={{ fontSize: 44, lineHeight: 1 }}>
-                Sexton
-              </div>
-              <div className="kick" style={{ marginTop: 8 }}>
-                Scholar standing
-              </div>
-            </div>
-            <div>
-              <div className="kick" style={{ marginBottom: 10 }}>
-                Awards
-              </div>
-              <div style={{ fontSize: 14, lineHeight: 1.75, color: "rgba(47,58,47,.75)" }}>
-                Chancellor&apos;s Scholarship
-                <br />
-                Entrance Community and Leadership Award
-                <br />
-                Global Renewable Scholar Award
-                <br />
-                WiTS Helping Hands Award
-                <br />
-                WiTS Academic Distinction
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </section>
+      </main>
 
-      <div className="w-full" style={{ background: "var(--sage-deep)", color: "var(--bg)" }}>
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-11 py-14">
-          <h2 className="ser text-4xl sm:text-5xl" style={{ lineHeight: 1.02, margin: "0 0 18px", maxWidth: "26ch" }}>
-            If any of this is useful to your team, I would like to hear from you.
-          </h2>
-          <Link href="/contact" className="btnx" style={{ background: "var(--bg)", color: "var(--ink)" }}>
-            Nafisah.Nubah@dal.ca
-          </Link>
-        </div>
-      </div>
+      <button type="button" className="plane" data-plane aria-label="Back to top">
+        <span data-planeart aria-hidden="true" />
+        <span className="pt">back to top</span>
+      </button>
+
+      <Enhance />
     </div>
   )
 }

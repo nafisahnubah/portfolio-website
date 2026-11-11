@@ -50,7 +50,7 @@ export const profile = {
   stats: [
     ["Roles", "16"],
     ["Projects", "13"],
-    ["CGPA", "4.22"],
+    ["CGPA", "4.22", "/4.30"],
     ["Certs", "5"],
   ],
 }

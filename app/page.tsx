@@ -195,7 +195,6 @@ export default function HomePage() {
                 </span>
               ))}
             </span>
-            <i className="nsw" data-nsw aria-hidden="true" />
             <MarginNote note={{ side: "r", color: "cb", y: "6px", rot: "-4deg", lines: ["that's me!", "hi there"] }} />
           </h1>
           <p className="role">{profile.role}</p>
@@ -224,10 +223,13 @@ export default function HomePage() {
             , and spend the rest of my time mentoring and community building.
           </p>
           <dl className="stats">
-            {profile.stats.map(([k, v]) => (
+            {profile.stats.map(([k, v, total]) => (
               <div key={k}>
                 <dt>{k}</dt>
-                <dd>{v}</dd>
+                <dd>
+                  {v}
+                  {total && <small className="tot">{total}</small>}
+                </dd>
               </div>
             ))}
           </dl>

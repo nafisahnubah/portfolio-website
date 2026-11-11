@@ -114,7 +114,6 @@ body{margin:0;background:#f4f1ea}
 .r7c .stats div:first-child{border-left:0}
 .r7c .stats dt{font-family:var(--f-sans),system-ui,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu)}
 .r7c .stats dd{margin:0;font-size:40px;line-height:1.1;font-weight:500;font-variant-numeric:oldstyle-nums}
-.r7c .stats div:nth-child(3) dd{color:var(--red)}
 .r7c .blk:not(.top):not(.end)>h2{position:relative}
 .r7c .blk:not(.top):not(.end)>h2::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);position:absolute;right:calc(100% + 20px);top:-14px;font-family:var(--f-serif),Georgia,serif;font-style:italic;font-size:38px;letter-spacing:0;color:#d9cfbb;text-transform:none}
 .r7c .tint{margin-left:-34px;margin-right:-34px;padding:22px 34px 10px;background:#f2f5fb;border-radius:6px}
@@ -271,3 +270,7 @@ body{margin:0;background:#f4f1ea}
 @media (min-width:1241px){
   .r7c .ent>.nt.r,.r7c .tl .ent>.nt.r,.r7c .tint .ent>.nt.r,.r7c .feat>.nt.r{left:calc(100% + 40px)}
 }
+/* CGPA total, tucked after the number */
+.r7c .stats dd .tot{margin-left:3px;font-size:.4em;font-weight:400;color:var(--mu);letter-spacing:.01em}
+/* no swash under the name any more, so the subtitle sits closer */
+.r7c .role{margin-top:4px}

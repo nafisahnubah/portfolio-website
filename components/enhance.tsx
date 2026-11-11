@@ -77,9 +77,6 @@ function init(root: HTMLElement) {
   spy()
 
   requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add("in")))
-  // hand-drawn swash under the name
-  $("[data-nsw]").innerHTML =
-    '<svg viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 10 C60 4 120 13 180 7 S260 4 297 9"/></svg>'
 
   // section menu
   const mnu = $("[data-mnu]"),
